@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+html,body{  position:relative; overflow-x:hidden; overflow-y : hidden;}
+html.open,body.open{ overflow: hidden; }
+
+.sprite{ background-image:url("../images/common/sprite.png"); background-repeat: no-repeat; background-size:650px }
+
+.intro_top{ background:url("../images/main/bg_intro.jpg") center no-repeat; background-size:cover; }
+.slogan{ display:block; text-indent:-9999px; width:188px; height:45px; margin:0 auto 10px auto; background-position:0 -350px; background-size:350px; z-index: 100   }
+
+.intro_top{ padding-top:20px; padding-bottom:20px; height: 700px; }
+.intro_top > p{ font-family: 'Noto Serif KR'; font-weight:500; color:rgb(10, 114, 66);  text-align: center; line-height: 1.5}
+.intro_top > p.s_title{ font-size:18px; margin-bottom:30px;  }
+
+/* 배너 구역 > 색상 추후 변경*/
+.banner{ width: 90%; margin:0 auto; background: rgb(235,65,65); background:rgb(189, 252, 204); padding:0 25px; color:#262626; border-radius: 20px; overflow:hidden }
+.banner li{ font-family: 'Noto Serif KR'; border-bottom:#ccc solid 1px; text-align: center; padding:15px 0;  }
+.banner li span{ display: block; color:#b2b2b2; margin-bottom:10px; }
+.banner li p{ font-weight:bold; line-height: 1.3; }
+.banner li p.title{ font-size:20px; }
+.banner li p.s_title{ font-size:30px; }
+.banner li:nth-child(1) .s_title{ color:#364daa; }
+.banner li:nth-child(2) .s_title{ color:#12a48f; }
+
+/* 배너의 바로가기 버튼(삭제) */
+
+/* .banner .btn_set{ margin-top:15px; }
+.banner .btn_set a{ position:relative; display:inline-block; padding:10px 15px; color:#666; font-weight:bold} */
+/* .banner .btn_set a:before,.banner .btn_set a:after{ position:absolute; display:inline-block; background:#a3a3a3; content:""}
+.banner .btn_set a:before{ right:0; bottom:4px; width:10px; height:1px; transform: rotate(45deg);}
+.banner .btn_set a:after{ left:0; right:0; bottom:0; width:100%; height:1px;} */
+
+/* footer 색상 >> 추후 변경 */
+#intro_footer{ background:#0b631a; color:#fff; text-align: center; height:40px; padding:30px 15px;}
+.logo_bottom{  display:inline-block; width:153px; height:37px; margin-bottom:20px;  text-indent: -9999px; background-size:600px; background-position:-155px 0; transition: cubic-bezier(.2,.62,.51,.9) 0.3s }
+/* 대표번호 스타일 */
+/* .copyright{ margin-bottom:10px; } */
+.copyright p{ font-size:14px; line-height: 1.3; color:#ffffff; }
+/* .copyright p.txt_white { color:#fff;} */
+/* .info_num p{ font-size:12px; color:#fff; line-height: 1.5 } */
+
+@media all and (min-width:768px) {
+  .intro_top{ padding-top:50px; padding-bottom:50px;   }
+  .intro_top{ padding:100px 0; }
+  .intro_top p.s_title{ font-size:20px; }
+  .intro_top p.title{ font-size:30px; }
+  .slogan{ margin:0 auto 30px auto;}
+
+  .banner{ display:flex; padding:0;  }
+  .banner li{ width:90%; padding:25px; border-bottom:0; border-right:#ccc solid 1px; }
+  .banner li:last-child{ border-right:0; }
+
+  .copyright p{ font-size:16px;}
+  .copyright p br{ display:none; }
+}
+
+@media all and ( min-width:1024px){
+   .slogan{width: 350px;height: 84px;background-size:auto;background-position: 0 -650px;}
+   .intro_top > p.s_title{ font-size:25px; }
+}
+
+@media all and ( min-width:1440px){
+  .sprite{ background-image:url("../images/common/sprite.png"); background-repeat: no-repeat; background-size:auto !important }
+
+  .slogan{ top:100px; width:350px; height:84px; background-position:0 -650px; }
+
+  .intro_top{ padding:100px 0 0; }
+  .intro_top > p.s_title{ font-size:30px;   margin-bottom:70px;}
+  .intro_top .mid_btn{ font-size:24px; width:470px; padding:22px 0 25px 0; transition: cubic-bezier(.2,.62,.51,.9) 0.3s  }
+  .intro_top .mid_btn:hover{ background:#fff; color:#000; transition: cubic-bezier(.2,.62,.51,.9) 0.3s}
+  .intro_top .mid_btn:hover span{ color:#eb4141; }
+
+  .banner{ position:relative; width:1050px; margin-bottom:-100px; z-index: 100;}
+  .banner li{ padding:50px 0 70px 0; }
+  .banner li p.title{ font-size:35px; }
+  .banner li p.s_title{ font-size:45px; margin-bottom:50px; }
+
+  #intro_footer .container{ width:900px; margin:0 auto; overflow:hidden}
+  .logo_bottom{ float:left; margin:0 50px 0 0; width:157px; height: 30px; background-position:-170px 0;}
+
+}
