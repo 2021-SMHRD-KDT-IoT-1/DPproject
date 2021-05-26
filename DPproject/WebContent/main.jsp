@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Astral by HTML5 UP</title>
-<meta charset="utf-8" />
+<title>DaeB</title>
+<meta charset="EUC-KR" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
@@ -100,7 +100,7 @@
 								<input type="text" name="report_title" placeholder="제목" />
 							</div>
 							<div class="col-12">
-								<textarea name="reprot_content" placeholder="내용" rows="6"
+								<textarea name="report_content" placeholder="내용" rows="6"
 									style="resize: none;"></textarea>
 							</div>
 							<div class="col-12" align="right">
