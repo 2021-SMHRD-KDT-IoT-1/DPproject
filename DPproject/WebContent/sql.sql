@@ -104,3 +104,13 @@ REFERENCES product (
 	product_id,
 	building_id
 );
+
+CREATE SEQUENCE report_num
+INCREMENT BY 1
+START WITH 1
+MINVALUE 1
+
+CREATE SEQUENCE contact_num
+INCREMENT BY 1
+START WITH 1
+MINVALUE 1
