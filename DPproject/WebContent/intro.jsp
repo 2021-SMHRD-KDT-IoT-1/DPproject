@@ -50,10 +50,11 @@
 		<ul class="actions vertical">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinServiceCon.do" method="post">
-				<li><input type="text" placeholder="Email을 입력하세요" name="email"></li>
+				<li><input type="text" placeholder="ID를 입력하세요" name="id"></li>
 				<li><input type="password" placeholder="PW를 입력하세요" name="pw"></li>
-				<li><input type="text" placeholder="전화번호를 입력하세요" name="tel"></li>
-				<li><input type="text" placeholder="집주소를 입력하세요" name="addr"></li>
+				<li><input type="text" placeholder="이름을 입력하세요" name="name"></li>
+				<li><input type="text" placeholder="전화번호를 입력하세요(-제외)" name="tel"></li>
+				<li><input type="text" placeholder="집주소를 입력하세요" name="address"></li>
 				<li><input type="submit" value="JoinUs" class="button fit"></li>
 			</form>
 		</ul>
