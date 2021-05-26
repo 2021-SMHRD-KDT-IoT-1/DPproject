@@ -1,7 +1,49 @@
 package com.model;
 
 public class contactDTO {
-
+	private String name;
+	private String tel;
+	private String title;
+	private String content;
 	
+	public contactDTO(String name, String tel, String title, String content) {
+		super();
+		this.name = name;
+		this.tel = tel;
+		this.title = title;
+		this.content = content;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
 	
 }
