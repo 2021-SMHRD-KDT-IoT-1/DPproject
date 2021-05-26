@@ -37,7 +37,7 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><h5>·Î±×ÀÎ</h5></li>
-			<form action="#" method="post">
+			<form action="LoginServiceCon.do" method="post">
 				<li><input type="text" placeholder="ID" name="id"></li>
 				<li><input type="password" placeholder="PASSWORD" name="pw"></li>
 				<li><input type="submit" value="LOGIN" class="button fit"></li>

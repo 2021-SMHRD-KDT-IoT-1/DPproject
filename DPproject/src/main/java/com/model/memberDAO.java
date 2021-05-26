@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class memberDAO {
-	
+
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
@@ -75,6 +75,38 @@ public class memberDAO {
 		}
 
 		return cnt;
+	}
+
+	public memberDTO login(memberDTO InputDto) {
+		conn();
+		try {
+
+			String sql = "select * from member where id=? and pw=?";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, InputDto.getId());
+			psmt.setString(2, InputDto.getPw());
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				String id = rs.getString(1);
+				String pw = rs.getString(2);
+				String name = rs.getString(3);
+				String tel = rs.getString(4);
+				String address = rs.getString(5);
+
+				dto = new memberDTO(id, pw, name, tel, address);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return dto;
+
 	}
 
 }

@@ -17,8 +17,13 @@ public class memberDTO {
 		this.tel = tel;
 		this.address = address;
 	}
-	
-	
+		
+	public memberDTO(String id, String pw) {
+		super();
+		this.id = id;
+		this.pw = pw;
+	}
+
 	public String getId() {
 		return id;
 	}

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
 import com.controller.JoinServiceCon;
+import com.controller.LoginServiceCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -41,6 +42,10 @@ public class FrontController extends HttpServlet {
 		
 		if(resultURI.equals("JoinServiceCon.do")) {
 			command = new JoinServiceCon();	
+		}
+		
+		else if(resultURI.equals("LoginServiceCon.do")) {
+			command = new LoginServiceCon();	
 		}
 		
 		String moveURL = command.execute(request, response);
