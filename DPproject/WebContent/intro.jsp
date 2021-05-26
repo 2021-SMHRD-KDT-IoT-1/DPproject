@@ -22,16 +22,43 @@
 		<div class="slogan sprite">로고나 슬로건</div>
 		<p class="s_title">PreparEscape</p>
 		<ul class="banner">
-			<li><a href="member.jsp"> <span>뭐라고하징</span>
+			<li><a href=""> <span>뭐라고하징</span>
 					<p class="title">회원페이지</p>
 					<p class="s_title">실시간 화재 감시</p>
 			</a></li>
-			<li><a href="main.jsp"> <span>PreparEscape</span>
+			<li><a href="#menu"> <span>PreparEscape</span>
 					<p class="title">대#ㅣ</p>
 					<p class="s_title">홈페이지</p>
 			</a></li>
 		</ul>
 	</section>
+
+	<!--로그인 메뉴********  -->	
+	<nav id="menu">
+		<ul class="links">
+			<li><h5>로그인</h5></li>
+			<form action="#" method="post">
+				<li><input type="text" placeholder="ID" name="id"></li>
+				<li><input type="password" placeholder="PASSWORD" name="pw"></li>
+				<li><input type="submit" value="LOGIN" class="button fit"></li>
+			</form>
+		</ul>
+	</nav>
+	
+	<!-- ******회원가입******** -->
+	<nav id = "joinmenu">
+		<ul class="actions vertical">
+			<li><h5>회원가입</h5></li>
+			<form action="JoinServiceCon.do" method="post">
+				<li><input type="text" placeholder="Email을 입력하세요" name="email"></li>
+				<li><input type="password" placeholder="PW를 입력하세요" name="pw"></li>
+				<li><input type="text" placeholder="전화번호를 입력하세요" name="tel"></li>
+				<li><input type="text" placeholder="집주소를 입력하세요" name="addr"></li>
+				<li><input type="submit" value="JoinUs" class="button fit"></li>
+			</form>
+		</ul>
+	
+	</nav>
 
 	<!--푸터영역 -->
 	<footer id="intro_footer">
