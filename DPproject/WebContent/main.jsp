@@ -100,7 +100,7 @@
 								<input type="text" name="report_title" placeholder="제목" />
 							</div>
 							<div class="col-12">
-								<textarea name="reprot_content" placeholder="내용" rows="6"
+								<textarea name="report_content" placeholder="내용" rows="6"
 									style="resize: none;"></textarea>
 							</div>
 							<div class="col-12" align="right">
