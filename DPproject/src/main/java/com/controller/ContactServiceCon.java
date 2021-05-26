@@ -21,7 +21,7 @@ public class ContactServiceCon extends HttpServlet {
 
 		Connection conn = null;
 		PreparedStatement psmt = null;
-		ResultSet rs = null;
+		int cnt = 0;
 		
 		request.setCharacterEncoding("EUC-KR");
 
@@ -39,18 +39,17 @@ public class ContactServiceCon extends HttpServlet {
 
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
 
-			String sql = "select * from ";
+			String sql = "insert into contact values=?,?,?,? "; 
+			//sql¹® ¼öÁ¤ select -> insert into 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, name);
 			psmt.setString(2, tel);
 			psmt.setString(3, title);
 			psmt.setString(1, content);
 
-			rs = psmt.executeQuery();
+			cnt = psmt.executeUpdate();
 
-			if (rs.next()) {
-
-			}
+			
 
 		} catch (Exception e) {
 
@@ -58,9 +57,7 @@ public class ContactServiceCon extends HttpServlet {
 		} finally {
 
 			try {
-				if (rs != null) {
-					rs.close();
-				}
+				
 				if (psmt != null) {
 					psmt.close();
 
