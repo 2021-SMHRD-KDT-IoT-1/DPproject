@@ -5,6 +5,8 @@ DROP TABLE checklist;
 DROP TABLE report;
 DROP TABLE contact;
 
+select * from member;
+
 CREATE TABLE member (
 	id	varchar2(50)		NOT NULL,
 	pw	varchar2(50)		NOT NULL,
