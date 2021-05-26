@@ -22,11 +22,11 @@
 		<div class="slogan sprite">로고나 슬로건</div>
 		<p class="s_title">PreparEscape</p>
 		<ul class="banner">
-			<li><a href=""> <span>뭐라고하징</span>
+			<li><a href="#menu"> <span>뭐라고하징</span>
 					<p class="title">회원페이지</p>
 					<p class="s_title">실시간 화재 감시</p>
 			</a></li>
-			<li><a href="#menu"> <span>PreparEscape</span>
+			<li><a href="main.jsp"> <span>PreparEscape</span>
 					<p class="title">대#ㅣ</p>
 					<p class="s_title">홈페이지</p>
 			</a></li>
