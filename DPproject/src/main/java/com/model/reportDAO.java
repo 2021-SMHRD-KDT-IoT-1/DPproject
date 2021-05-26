@@ -48,7 +48,7 @@ public class reportDAO {
 		conn();
 				
 		try {
-			String sql = "insert into report values(report_snum.nextval, ?, ?, ?, ?, sysdate)";
+			String sql = "insert into report values(report_num.nextval, ?, ?, ?, ?, sysdate)";
 
 			psmt = conn.prepareCall(sql);
 			
