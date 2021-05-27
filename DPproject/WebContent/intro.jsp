@@ -31,8 +31,7 @@
 					<p class="s_title">홈페이지</p>
 			</a></li>
 		</ul>
-	</section>
-
+		
 	<!--로그인 메뉴********  -->	
 	<nav id="menu">
 		<ul class="links">
@@ -60,6 +59,10 @@
 		</ul>
 	
 	</nav>
+	
+	
+	</section>
+
 
 	<!--푸터영역 -->
 	<footer id="intro_footer">
