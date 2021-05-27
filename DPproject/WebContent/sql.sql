@@ -43,6 +43,7 @@ CREATE TABLE report (
 	report_num	number		NOT NULL,
 	report_name	varchar2(50)		NOT NULL,
 	report_tel	varchar2(50)		NOT NULL,
+	report_filename varchar2(50)	NOT NULL,
 	report_title	varchar2(100)		NOT NULL,
 	report_content	varchar2(1000)		NOT NULL,
 	datetime		date		NOT NULL

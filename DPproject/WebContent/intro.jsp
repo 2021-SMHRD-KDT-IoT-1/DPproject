@@ -3,21 +3,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="EUC-KR">
-<meta name="description" content="대피">
-<meta name="keywords" content="대피">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="대피">
-<meta property="og:title" content="대피">
-<meta property="og:description" content="대피">
 <title>대피</title>
+<meta charset="EUC-KR">
 <link href="css/basic.css" rel="stylesheet" type="text/css">
-<!-- <link href="css/all.css" rel="stylesheet" type="text/css"> -->
 <link href="css/intro.css" rel="stylesheet" type="text/css">
+<link href="css/menu.css" rel="stylesheet" type="text/css">
 
 
 </head>
-<body>
+<body class="is-preload">
 	<section class="intro_top">
 		<div class="slogan sprite">로고나 슬로건</div>
 		<p class="s_title">PreparEscape</p>
@@ -45,7 +39,7 @@
 	</nav>
 	
 	<!-- ******회원가입******** -->
-	<nav id = "joinmenu">
+	<nav id = "menu">
 		<ul class="actions vertical">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinServiceCon.do" method="post">
@@ -75,6 +69,15 @@
 			</div>
 		</div>
 	</footer>
+
+	<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/introutil.js"></script>
+		<script src="assets/js/intro.js"></script>
 
 </body>
 </html>

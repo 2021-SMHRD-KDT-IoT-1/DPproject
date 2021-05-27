@@ -96,6 +96,12 @@
 							<div class="col-6">
 								<input type="text" name="report_tel" placeholder="전화번호" />
 							</div>
+							
+							<!-- 파일첨부 추가 -->
+							<div>
+							<input name="fileName" type="file" style="float: right;">
+							</div>
+							
 							<div class="col-12">
 								<input type="text" name="report_title" placeholder="제목" />
 							</div>
@@ -128,9 +134,10 @@
 								<input type="text" name="tel" placeholder="전화번호" />
 							</div>
 							
-								<!-- 파일첨부 추가 -->
+							<!-- 파일첨부 추가 -->
+							<div>
 							<input name="fileName" type="file" style="float: right;">
-						
+							</div>
 							
 							<div class="col-12">
 								<input type="text" name="title" placeholder="제목" />
