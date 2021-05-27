@@ -20,7 +20,7 @@ public class contactDTO {
 		this.content = content;
 		this.datetime = datetime;
 	}
-	
+
 
 	public contactDTO(String name, String tel, String filename, String title, String content) {
 		super();
@@ -30,8 +30,6 @@ public class contactDTO {
 		this.title = title;
 		this.content = content;
 	}
-
-
 
 	public int getNum() {
 		return num;
@@ -88,5 +86,5 @@ public class contactDTO {
 	public void setDatetime(String datetime) {
 		this.datetime = datetime;
 	}
-	
+
 }
