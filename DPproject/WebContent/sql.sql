@@ -52,6 +52,7 @@ CREATE TABLE contact (
 	contact_num	number		NOT NULL,
 	contact_name	varchar2(50)		NOT NULL,
 	contact_tel	varchar2(50)		NOT NULL,
+	contact_filename varchar2(50)	NOT NULL,
 	contact_title	varchar2(100)		NOT NULL,
 	contact_content	varchar2(1000)		NOT NULL,
 	datetime		date		NOT NULL

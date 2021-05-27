@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,64 +14,69 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/FormServiceCon")
+import com.model.contactDAO;
+import com.model.contactDTO;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+@WebServlet("/ContactServiceCon")
 public class ContactServiceCon extends HttpServlet {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		   // title, writer, content에 대한 인코딩
+	      request.setCharacterEncoding("EUC-KR");
 
-		Connection conn = null;
-		PreparedStatement psmt = null;
-		int cnt = 0;
-		
-		request.setCharacterEncoding("EUC-KR");
+	      // 이미지의 저장 경로 지정(서버 내 폴더)
+	      // getServletContext : 서블릿의 정보
+	      // getRealPath : 실제 경로
+	      String savePath = request.getServletContext().getRealPath("img");
 
-		String name = request.getParameter("contact_name");
-		String tel = request.getParameter("contact_tel");
-		String title = request.getParameter("contact_title");
-		String content = request.getParameter("contact_content");
+	      System.out.println(savePath);
 
+	      // 이미지 크기 지정
+	      int maxSize = 5 * 1024 * 1024;
 
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String db_id = "hr";
-			String db_pw = "hr";
+	      // 사진 이름 인코딩 설정
+	      String encoding = "EUC-KR";
+	      
+	      // cos.jar 파일안에 있는 클래스 사용
+	      // 요청, 저장경로, 사이즈 최대 크기, 인코딩 방식, DefaultFileRenamePolicy : 이미지파일중복제거
+	      MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, new DefaultFileRenamePolicy());
+	      
+	      // 데이터베이스에 저장하기위해서 fileName, title, content 등의 정보 가져오기
+	      String name = multi.getParameter("name");
+	      String tel = multi.getParameter("tel");
+	      // 이미지태그에 작성 시 16진수로 나타내줘야해서 인코딩을 진행
+	      String fileName = URLEncoder.encode(multi.getFilesystemName("fileName"), "EUC-KR");
+	      String title = multi.getParameter("title");
+	      String content = multi.getParameter("content");
+	      
+	      System.out.println(name);
+	      System.out.println(tel);
+	      System.out.println(fileName);
+	      System.out.println(title);
+	      System.out.println(content);
+	      
+	      contactDTO dto = new contactDTO(name, tel, fileName, title, content);
+	      contactDAO dao = new contactDAO();
+	      
+	      int cnt = dao.upload(dto);
+	      
+	      if(cnt >0) {
+	         System.out.println("파일 업로드 성공");
+	      }else {
+	         System.out.println("파일 업로드 실패");
+	      }
+	      
+	      response.sendRedirect("main.jsp");
+	      
+	      
+	      
 
-			conn = DriverManager.getConnection(db_url, db_id, db_pw);
-
-			String sql = "insert into contact values=?,?,?,? "; 
-			//sql문 수정 select -> insert into 
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, name);
-			psmt.setString(2, tel);
-			psmt.setString(3, title);
-			psmt.setString(1, content);
-
-			cnt = psmt.executeUpdate();
-
-			
-
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		} finally {
-
-			try {
-				
-				if (psmt != null) {
-					psmt.close();
-
-				}
-				if (conn != null) {
-					conn.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		
-
-	}
+	   }
 
 }
+
+
+
+
