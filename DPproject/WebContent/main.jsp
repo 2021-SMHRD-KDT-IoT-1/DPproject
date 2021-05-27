@@ -118,20 +118,25 @@
 				<header>
 					<h2>구매·대여 문의</h2>
 				</header>
-				<form action="ContactServiceCon" method="post">
+				<form action="ContactServiceCon" method="post" enctype="multipart/form-data" method="post">
 					<div>
 						<div class="row">
 							<div class="col-6">
-								<input type="text" name="contact_name" placeholder="이름" />
+								<input type="text" name="name" placeholder="이름" />
 							</div>
 							<div class="col-6">
-								<input type="text" name="contact_tel" placeholder="전화번호" />
+								<input type="text" name="tel" placeholder="전화번호" />
+							</div>
+							
+								<!-- 파일첨부 추가 -->
+							<input name="fileName" type="file" style="float: right;">
+						
+							
+							<div class="col-12">
+								<input type="text" name="title" placeholder="제목" />
 							</div>
 							<div class="col-12">
-								<input type="text" name="contact_title" placeholder="제목" />
-							</div>
-							<div class="col-12">
-								<textarea name="contact_content" placeholder="내용" rows="6"
+								<textarea name="content" placeholder="내용" rows="6"
 									style="resize: none;"></textarea>
 							</div>
 							<div class="col-12" align="right">
