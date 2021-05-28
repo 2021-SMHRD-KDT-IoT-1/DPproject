@@ -1,3 +1,4 @@
+<%@page import="com.model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -14,6 +15,15 @@
 
 </head>
 <body class="is-preload">
+
+<%
+		memberDTO dto = (memberDTO)session.getAttribute("dto");	
+	
+	%>
+
+
+
+
 	<!-- Wrapper-->
 	<div id="wrapper">
 
@@ -109,15 +119,21 @@
 								<textarea name="report_content" placeholder="내용" rows="6"
 									style="resize: none;"></textarea>
 							</div>
+							<%if(dto != null) {%>
+								<%if(dto.getId().equals("master")){ %>
+								<div class="col-12" align="left">
+								<button type="button" onclick="location.href='asdfasdf.jsp' ">신고목록</button>
+							</div>
+								<%}%>
+								<%} %>
 							<div class="col-12" align="right">
 								<input type="submit" value="접수" />
 							</div>
 						</div>
 					</div>
 				</form>
-			</article>
-
-
+			</article>			
+							
 			<!-- Contact -->
 			<!-- ContactServiceCon에서 입력된 값 받아서 DB에 저장하기 -->
 			<article id="contact" class="panel">
@@ -146,9 +162,13 @@
 								<textarea name="content" placeholder="내용" rows="6"
 									style="resize: none;"></textarea>
 							</div>
+								<%if(dto != null) {%>
+								<%if(dto.getId().equals("master")){ %>
 							<div class="col-12" align="left">
 								<button type="button" onclick="location.href='contactBoardMain.jsp' ">문의목록</button>
 							</div>
+								<%}%>
+								<%} %>
 							<div class="col-12" align="right">
 								<input type="submit" value="문의" />
 							</div>
