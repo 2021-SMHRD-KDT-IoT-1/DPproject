@@ -5,7 +5,7 @@ DROP TABLE checklist;
 DROP TABLE report;
 DROP TABLE contact;
 
-select * from contact;
+select * from member;
 
 CREATE TABLE member (
 	id	varchar2(50)		NOT NULL,
@@ -115,6 +115,11 @@ START WITH 1
 MINVALUE 1
 
 CREATE SEQUENCE contact_num
+INCREMENT BY 1
+START WITH 1
+MINVALUE 1
+
+CREATE SEQUENCE check_num
 INCREMENT BY 1
 START WITH 1
 MINVALUE 1

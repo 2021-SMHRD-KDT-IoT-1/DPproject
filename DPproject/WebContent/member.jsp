@@ -46,7 +46,7 @@
 					<p class="title"></p>
 					<p class="s_title">실시간 화재 감시</p>
 			</a></li>
-			<li><a href="main.jsp"> <span>PreparEscape</span>
+			<li><a href="ViewCheckList.jsp"> <span>PreparEscape</span>
 					<p class="title">점검현황</p>
 					<p class="s_title">뭐라고 할까요</p>
 			</a></li>

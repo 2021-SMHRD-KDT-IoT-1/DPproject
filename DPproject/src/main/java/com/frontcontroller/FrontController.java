@@ -13,6 +13,7 @@ import com.controller.ContactServiceCon;
 import com.controller.JoinServiceCon;
 import com.controller.LoginServiceCon;
 import com.controller.ReportServiceCon;
+import com.controller.WriteCheckListServiceCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -54,6 +55,9 @@ public class FrontController extends HttpServlet {
 		}else if (resultURI.equals("ReportServiceCon.do")) {
 			command = new ReportServiceCon();
 		
+		}else if (resultURI.equals("WriteCheckListServiceCon.do")) {
+			command = new WriteCheckListServiceCon();
+			
 		}	
 		
 		String moveURL = command.execute(request, response);
