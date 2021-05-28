@@ -124,7 +124,7 @@
 				<header>
 					<h2>구매·대여 문의</h2>
 				</header>
-				<form action="ContactServiceCon" method="post" enctype="multipart/form-data" method="post">
+				<form action="ContactServiceCon.do" method="post" enctype="multipart/form-data" method="post">
 					<div>
 						<div class="row">
 							<div class="col-6">

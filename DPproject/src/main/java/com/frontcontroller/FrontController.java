@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
+import com.controller.ContactServiceCon;
 import com.controller.JoinServiceCon;
 import com.controller.LoginServiceCon;
 
@@ -42,10 +43,13 @@ public class FrontController extends HttpServlet {
 		
 		if(resultURI.equals("JoinServiceCon.do")) {
 			command = new JoinServiceCon();	
-		}
-		
-		else if(resultURI.equals("LoginServiceCon.do")) {
+			
+		}else if(resultURI.equals("LoginServiceCon.do")) {
 			command = new LoginServiceCon();	
+			
+		}else if (resultURI.equals("ContactServiceCon.do")) {
+			command = new ContactServiceCon();
+			
 		}
 		
 		String moveURL = command.execute(request, response);
