@@ -18,7 +18,7 @@
 		
 	%>
 	<div id="board">
-		<table id="list">
+		<table id="list" border="1">
 			<tr>
 				<td>번호</td>
 				<td>제품번호</td>
@@ -29,20 +29,20 @@
 				<td>특이사항</td>
 			</tr>
 
-			<% for (int i = 0; i < list.size(); i++) { %>
-			
+			<%for(int i = 0; i < list.size(); i++){ %>			
 			<tr>
-				<td><%=i + 1%></td>
-				<td><a href="WriteCheckList.jsp?num=<%=list.get(i).getCheck_num()%>">
-						<%=list.get(i).getProduct_id()%>
-				</a></td>
-				<td><%=list.get(i).getBuilding_id()%></td>
-				<td><%=list.get(i).getCheck_date()%></td>
-				<td><%=list.get(i).getState()%></td>
-				<td><%=list.get(i).getBattery()%></td>
-				<td><%=list.get(i).getRemarks()%></td>
+				<td><%= i+1 %></td>
+				<td><a href="WriteCheckList.jsp?num=<%= list.get(i).getCheck_num() %>">
+				<%= list.get(i).getProduct_id() %></a></td>
+				<td><%= list.get(i).getBuilding_id() %></td>
+				<td><%= list.get(i).getCheck_date() %></td>
+				<td><%= list.get(i).getState() %></td>
+				<td><%= list.get(i).getBattery() %></td>
+				<td><%= list.get(i).getRemarks() %></td>
+			
 			</tr>
-			<% } %>
+			<%} %>
+			
 
 		</table>
 

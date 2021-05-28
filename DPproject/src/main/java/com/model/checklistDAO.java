@@ -48,11 +48,9 @@ public class checklistDAO {
 	public ArrayList<checklistDTO> showBoard(String building_id) {
 		ArrayList<checklistDTO> list = new ArrayList<checklistDTO>();
 		conn();
-		String sql = "select * from checklist where building_id = ? order by product_id, check_date desc";
-		
-		
 		
 		try {
+			String sql = "select * from checklist where building_id = ? order by product_id, check_date desc";
 			psmt = conn.prepareStatement(sql);
 			
 			psmt.setString(1, building_id);
@@ -83,8 +81,8 @@ public class checklistDAO {
 	
 	public int upload(checklistDTO dto) {
 		conn();
-		String sql = "insert into checklist values(check_num.nextval, ?, ?, ?, ?, ?, ?)";
 		try {
+			String sql = "insert into checklist values(check_num.nextval, ?, ?, ?, ?, ?, ?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getProduct_id());
 			psmt.setString(2, dto.getBuilding_id());
