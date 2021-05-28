@@ -12,6 +12,7 @@ import com.command.Command;
 import com.controller.ContactServiceCon;
 import com.controller.JoinServiceCon;
 import com.controller.LoginServiceCon;
+import com.controller.WriteCheckListServiceCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -49,6 +50,9 @@ public class FrontController extends HttpServlet {
 			
 		}else if (resultURI.equals("ContactServiceCon.do")) {
 			command = new ContactServiceCon();
+			
+		}else if (resultURI.equals("WriteCheckListServiceCon.do")) {
+			command = new WriteCheckListServiceCon();
 			
 		}
 		
