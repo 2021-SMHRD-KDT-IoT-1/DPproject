@@ -1,3 +1,4 @@
+<%@page import="com.model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -12,15 +13,31 @@
 <!-- 1. 로그인한 회원 주소, 아이디 출력 -->
 </head>
 <body class="is-preload">
+<%
+		memberDTO dto = (memberDTO)session.getAttribute("dto");
+	%>
 	<section class="intro_top">
 		<div class="slogan sprite">로고나 슬로건</div>
 		<p class="s_title">PreparEscape</p>
 		
 		<!-- 여기에 주소 출력!~!~!~!~! -->
-		<div></div>
+		<div>
+		<%if(dto!=null){%>
+			<span>주소 : <%=dto.getAddress() %></span>
+		<%}else {%>
+			<a href="#">로그인이 필요합니다! </a>
+		<%} %>
+		</div>
 
 		<!-- 여기에 아이디 출력!~!~!~!~! -->
-		<div></div>
+		<div>
+		<%if(dto!=null){%>
+			<span> <%=dto.getId()%> 님 환영합니다!! </span>
+		<%}else {%>
+			<a href="#">로그인이 필요합니다!</a>
+		<%} %>
+		
+		</div>
 		
 		
 		<ul class="banner">
