@@ -87,7 +87,7 @@
 					<h2>고장 신고</h2>
 					<p>고장신고를 해주신 분들께 소정의 상품을 드립니다</p>
 				</header>
-				<form action="ReportServiceCon" method="post">
+				<form action="ReportServiceCon.do" method="post">
 					<div>
 						<div class="row">
 							<div class="col-6">
@@ -145,6 +145,9 @@
 							<div class="col-12">
 								<textarea name="content" placeholder="내용" rows="6"
 									style="resize: none;"></textarea>
+							</div>
+							<div class="col-12" align="left">
+								<button type="button" onclick="location.href='contactBoardMain.jsp' ">문의목록</button>
 							</div>
 							<div class="col-12" align="right">
 								<input type="submit" value="문의" />

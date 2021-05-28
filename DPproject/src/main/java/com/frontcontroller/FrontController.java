@@ -12,6 +12,7 @@ import com.command.Command;
 import com.controller.ContactServiceCon;
 import com.controller.JoinServiceCon;
 import com.controller.LoginServiceCon;
+import com.controller.ReportServiceCon;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -50,7 +51,10 @@ public class FrontController extends HttpServlet {
 		}else if (resultURI.equals("ContactServiceCon.do")) {
 			command = new ContactServiceCon();
 			
-		}
+		}else if (resultURI.equals("ReportServiceCon.do")) {
+			command = new ReportServiceCon();
+		
+		}	
 		
 		String moveURL = command.execute(request, response);
 		response.sendRedirect(moveURL);

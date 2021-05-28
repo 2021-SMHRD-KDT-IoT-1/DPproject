@@ -49,7 +49,7 @@
 		</table>
 
 		<a href="main.jsp"><button id="writer">홈으로가기</button></a> 
-		<a href="main.jsp"><button id="writer">작성하러가기</button></a>
+		
 	</div>
 	<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>

@@ -1,20 +1,19 @@
 package com.controller;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.command.Command;
 import com.model.reportDAO;
 import com.model.reportDTO;
 
-@WebServlet("/ReportServiceCon")
-public class ReportServiceCon extends HttpServlet {
+public class ReportServiceCon implements Command {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		
+		String moveURL = null;
 		
 		String report_name = request.getParameter("report_name"); 
 		String report_tel = request.getParameter("report_tel");
@@ -36,13 +35,10 @@ public class ReportServiceCon extends HttpServlet {
 		}else {
 			System.out.println("고장신고 실패!");
 		}
-		response.sendRedirect("main.jsp");
+		moveURL = "main.jsp";
 
 		
-		
-		
-		
-	
+		return moveURL;
 	}
 
 }

@@ -12,13 +12,13 @@
 	
 	<%
 	// get 방식으로 보낸 num받아오기
-	//  String get_num = request.getParameter("num");
-	//  System.out.println(get_num);
+	  String get_num = request.getParameter("num");
+	  System.out.println(get_num);
 	// String -> int 형변환
-	//  int num = Integer.parseInt(get_num);
+	  int num = Integer.parseInt(get_num);
 	
 	contactDAO dao = new contactDAO();
-	contactDTO dto = dao.showOne(4);
+	contactDTO dto = dao.showOne(num);
 	
 		
 	%>
