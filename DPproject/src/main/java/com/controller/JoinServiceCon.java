@@ -34,12 +34,13 @@ public class JoinServiceCon implements Command {
 				HttpSession session = request.getSession();
 				session.setAttribute("email", email);
 				
+				moveURL = "intro.jsp#menu";
 			}
 			else {	
 				System.out.println("회원가입 실패");
+				
+				moveURL = "intro.jsp";
 			}
-		
-			moveURL = "intro.jsp";
 		
 			return moveURL;
 	}

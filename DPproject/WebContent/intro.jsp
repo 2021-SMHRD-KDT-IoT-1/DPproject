@@ -39,7 +39,7 @@
 	</nav>
 	
 	<!-- ******회원가입******** -->
-	<nav id = "menu">
+	<nav id = "#">
 		<ul class="actions vertical">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinServiceCon.do" method="post">

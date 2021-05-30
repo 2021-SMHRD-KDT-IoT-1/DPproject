@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class contactDAO {
 	Connection conn = null;
@@ -45,7 +46,7 @@ public class contactDAO {
 	
 	public int upload(contactDTO dto) {
 		conn();
-		String sql = "insert into contact values(num_board.nextval,?,?, ?, ?, ?, sysdate)";
+		String sql = "insert into contact values(contact_num.nextval,?,?, ?, ?, ?, sysdate)";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getName());
@@ -62,63 +63,70 @@ public class contactDAO {
 		return cnt;
 	}
 	
-//	public ArrayList<WebBoardDTO> showBoard() {
-//		ArrayList<WebBoardDTO> list = new ArrayList<WebBoardDTO>();
-//		conn();
-//		String sql = "select * from web_board order by day desc";
-//		
-//		try {
-//			psmt = conn.prepareStatement(sql);
-//			rs = psmt.executeQuery();
-//			
-//			while(rs.next()) {
-//				int num = rs.getInt("num");
-//				String title = rs.getString("title");
-//				String writer = rs.getString("writer");
-//				String fileName = rs.getString("fileName");
-//				String content = rs.getString("content");
-//				String day = rs.getString("day");
-//				
-//				WebBoardDTO dto = new WebBoardDTO(num, title, writer, fileName, content, day);
-//				list.add(dto);
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close();
-//		}
-//		return list ;
-//	}
-//	
-//	
-//	public WebBoardDTO showOne(int choice) {
-//		WebBoardDTO dto = null;
-//		conn();
-//		
-//		String sql = "select * from web_board where num = ?";
-//		
-//		try {
-//			psmt = conn.prepareStatement(sql);
-//			psmt.setInt(1, choice);
-//			rs = psmt.executeQuery();
-//			if(rs.next()) {
-//				int num = rs.getInt("num");
-//				String title = rs.getString("title");
-//				String writer = rs.getString("writer");
-//				String fileName = rs.getString("fileName");
-//				String content = rs.getString("content");
-//				String day = rs.getString("day");
-//				dto = new WebBoardDTO(num, title, writer, fileName, content, day);
-//			}
-//			
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			close();
-//		}
-//		return dto;
-//	}
-//	
+	public ArrayList<contactDTO> showBoard() {
+		ArrayList<contactDTO> list = new ArrayList<contactDTO>();
+		conn();
+		String sql = "select * from contact order by datetime desc";
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int num = rs.getInt("contact_num");
+				String name = rs.getString("contact_name");
+				String tel = rs.getString("contact_tel");
+				String fileName = rs.getString("contact_filename");
+				String title = rs.getString("contact_title");
+				String content = rs.getString("contact_content");
+				String datetime = rs.getString("datetime");
+							
+				contactDTO dto = new contactDTO(num, name, tel, fileName, title, content, datetime);
+				list.add(dto);
+				
+		
+				
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list ;
+	}
+	
+	
+	public contactDTO showOne(int choice) {
+		contactDTO dto = null;
+		conn();
+		
+		String sql = "select * from contact where contact_num = ?";
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, choice);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				int num = rs.getInt("contact_num");
+				String name = rs.getString("contact_name");
+				String tel = rs.getString("contact_tel");
+				String fileName = rs.getString("contact_filename");
+				String title = rs.getString("contact_title");
+				String content = rs.getString("contact_content");
+				String datetime = rs.getString("datetime");
+							
+				dto = new contactDTO(num, name, tel, fileName, title, content, datetime);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return dto;
+	}
+	
 	
 
 }

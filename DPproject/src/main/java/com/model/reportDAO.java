@@ -85,8 +85,8 @@ public class reportDAO {
 				int report_num = rs.getInt("report_num");
 				String report_name = rs.getString("report_name");
 				String report_tel = rs.getString("report_tel");
-				String report_title = rs.getString("report_title");
 				String report_filename = rs.getString("report_filename");
+				String report_title = rs.getString("report_title");
 				String report_content = rs.getString("report_content");
 				String datetime = rs.getString("datetime");
 

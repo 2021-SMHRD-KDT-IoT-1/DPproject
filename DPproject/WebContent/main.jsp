@@ -1,6 +1,8 @@
 <%@page import="com.model.reportDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.reportDAO"%>
+
+<%@page import="com.model.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -17,6 +19,11 @@
 
 </head>
 <body class="is-preload">
+
+<%
+	memberDTO dto = (memberDTO)session.getAttribute("dto");	
+%>
+
 	<!-- Wrapper-->
 	<div id="wrapper">
 
@@ -86,48 +93,54 @@
 			<!-- 고장신고(report) -->
 			<!-- ReportServiceCon에서 입력된 값 받아서 DB에 저장하기 -->
 			<article id="report" class="panel">
-				
-							 <%
-         		 reportDAO dao=new reportDAO();
-        		 ArrayList<reportDTO> list=dao.showReport();
-         
-       		 %>
-
-				<div id="board">
-					<table id="list">
-						<tr>
-							<td>번호</td>
-							<td>제목</td>
-							<td>작성자</td>
-							<td>시간</td>
-						</tr>
-
-						<%for(int i=0;i<list.size();i++) {%>
-						<tr>
-							<td><%=i+1 %></td>
-							<td><a href="viewReport.jsp?num=<%=list.get(i).getReport_num()%>"> <%=list.get(i).getReport_title()%></a></td>
-							<td><%=list.get(i).getReport_name() %></td>
-							<td><%=list.get(i).getDatetime() %></td>
-						</tr>
-
-						<%} %>
-
-					</table>
-
-					<a href="main.jsp"><button id="writer">홈으로가기</button></a> 
-					<a href="writerReport.jsp"><button id="writer">작성하러가기</button></a>
-				</div>
-				
-			</article>
-
-
+				<header>
+					<h2>고장 신고</h2>
+					<p>고장신고를 해주신 분들께 소정의 상품을 드립니다</p>
+				</header>
+				<form action="WriteReport.do" method="post" enctype="multipart/form-data">
+					<div>
+						<div class="row">
+							<div class="col-6">
+								<input type="text" name="report_name" placeholder="이름" />
+							</div>
+							<div class="col-6">
+								<input type="text" name="report_tel" placeholder="전화번호" />
+							</div>
+							
+							<!-- 파일첨부 추가 -->
+							<div>
+							<input name="report_filename" type="file" style="float: right;">
+							</div>
+							
+							<div class="col-12">
+								<input type="text" name="report_title" placeholder="제목" />
+							</div>
+							<div class="col-12">
+								<textarea name="report_content" placeholder="내용" rows="6"
+									style="resize: none;"></textarea>
+							</div>
+							<div class="col-12" align="right">
+								<input type="submit" value="접수" />
+							</div>
+						</div>
+					</div>
+				</form>
+							<%if(dto != null) {%>
+								<%if(dto.getId().equals("master")){ %>
+								<div class="col-12" align="left">
+								<a href = "reportList.jsp"><button>신고목록</button></a>
+								</div>
+								<%}%>
+								<%} %>
+			</article>			
+							
 			<!-- Contact -->
 			<!-- ContactServiceCon에서 입력된 값 받아서 DB에 저장하기 -->
 			<article id="contact" class="panel">
 				<header>
 					<h2>구매·대여 문의</h2>
 				</header>
-				<form action="ContactServiceCon.do" method="post" enctype="multipart/form-data" method="post">
+				<form action="ContactServiceCon.do" method="post" enctype="multipart/form-data">
 					<div>
 						<div class="row">
 							<div class="col-6">
@@ -155,6 +168,13 @@
 						</div>
 					</div>
 				</form>
+								<%if(dto != null) {%>
+								<%if(dto.getId().equals("master")){ %>
+							<div class="col-12" align="left">
+								<a href="contactBoardMain.jsp"><button>문의목록</button></a>
+							</div>
+								<%}%>
+								<%} %>
 			</article>
 
 		</div>

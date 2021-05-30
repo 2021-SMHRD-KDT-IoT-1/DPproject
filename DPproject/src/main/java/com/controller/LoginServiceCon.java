@@ -22,19 +22,23 @@ public class LoginServiceCon implements Command {
 		memberDAO dao = new memberDAO();
 		memberDTO resultDTO = dao.login(dto);
 
+		//**로그인 성공시에 member.jsp로 이동
+		//** 실패시에는 intro.jsp#menu로 이동~!
+		
 		if (resultDTO != null) {
 			System.out.println("로그인 성공");
 
 			HttpSession session = request.getSession();
 			session.setAttribute("dto", resultDTO);
+			
+			moveURL = "member.jsp";
 		} else {
 			System.out.println("로그인 실패");
-
-			HttpSession session = request.getSession();
-			session.removeAttribute("dto");
+			
+			moveURL = "intro.jsp#menu";
 		}
 
-		moveURL = "main.jsp";
+		
 		return moveURL;
 	}
 }

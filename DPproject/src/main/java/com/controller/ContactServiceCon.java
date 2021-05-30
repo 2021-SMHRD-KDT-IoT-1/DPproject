@@ -56,17 +56,19 @@ public class ContactServiceCon implements Command {
 
 			int cnt = dao.upload(dto);
 
+			//****성공했을 때 메인으로, 실패했을 때 메인의 구매문의 구역으로 돌아가게 수정~!~!~!~!~!~!
+			// 경로 쓸 때 파일명 뒤에 아이디 이름도 쓰면 됩니당~!~!~!~!~
 			if (cnt > 0) {
-				System.out.println("파일 업로드 성공");
+				System.out.println("구매/대여 문의 성공");
+				moveURL = "main.jsp";
 			} else {
-				System.out.println("파일 업로드 실패");
+				System.out.println("구매/대여 문의 실패");
+				moveURL = "main.jsp#contact";
 			}
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		moveURL = "main.jsp";
 
 		return moveURL;
 	}

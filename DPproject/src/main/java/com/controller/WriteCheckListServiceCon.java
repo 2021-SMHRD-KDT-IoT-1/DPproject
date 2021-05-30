@@ -44,12 +44,12 @@ public class WriteCheckListServiceCon implements Command {
 		
 		if(cnt > 0) {
 			System.out.println("점검현황 작성 성공!");
+			moveURL = "ViewCheckList.jsp";
 		}else {
 			System.out.println("점검현황 작성 실패!");
+			moveURL = "WriteCheckList.jsp";
 		}
 		
-		moveURL = "ViewCheckList.jsp";
-
 		return moveURL;
 	
 	}
