@@ -1,3 +1,6 @@
+<%@page import="com.model.memberDTO"%>
+<%@page import="com.model.memberDAO"%>
+<%@page import="com.model.productDAO"%>
 <%@page import="com.model.checklistDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.checklistDAO"%>
@@ -11,10 +14,13 @@
 </head>
 <body>
 	<%
+		memberDTO dto = (memberDTO)session.getAttribute("dto");
+		productDAO productDao = new productDAO();
+		String building_id = productDao.buildingId(dto.getId());
+		
 	
 		checklistDAO dao = new checklistDAO();
-		ArrayList<checklistDTO> list = dao.showBoard("building_id");
-		
+		ArrayList<checklistDTO> list = dao.showBoard(building_id);
 		
 	%>
 	<div id="board">
@@ -22,7 +28,6 @@
 			<tr>
 				<td>번호</td>
 				<td>제품번호</td>
-				<td>건물아이디</td>
 				<td>점검날짜</td>
 				<td>상태구분</td>
 				<td>배터리교체일</td>
@@ -32,14 +37,11 @@
 			<%for(int i = 0; i < list.size(); i++){ %>			
 			<tr>
 				<td><%= i+1 %></td>
-				<td><a href="WriteCheckList.jsp?num=<%= list.get(i).getCheck_num() %>">
-				<%= list.get(i).getProduct_id() %></a></td>
-				<td><%= list.get(i).getBuilding_id() %></td>
+				<td><%= list.get(i).getProduct_id()%></td>
 				<td><%= list.get(i).getCheck_date() %></td>
 				<td><%= list.get(i).getState() %></td>
 				<td><%= list.get(i).getBattery() %></td>
 				<td><%= list.get(i).getRemarks() %></td>
-			
 			</tr>
 			<%} %>
 			

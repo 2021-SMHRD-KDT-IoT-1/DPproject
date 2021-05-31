@@ -20,12 +20,30 @@
 					<p class="title">회원페이지</p>
 					<p class="s_title">실시간 화재 감시</p>
 			</a></li>
-			<li><a href="main.jsp"> <span>PreparEscape</span>
+<!-- 			
+			<li><a onclick="openWindow()"> <span>PreparEscape</span>
 					<p class="title">대#ㅣ</p>
 					<p class="s_title">홈페이지</p>
 					
 			</a></li>
+ -->			
+ 			
+ 			<li onclick="openWindow()"><span >PreparEscape</span>
+				<p class="title">대#ㅣ</p>
+				<p class="s_title">홈페이지</p>
+			</li>
+	<script>
+		var newWindowObj;
+		// 변수 strWindowFeatures를 통해 새롭게 여는 웹 브라우저 창의 옵션들을 일일이 설정할 수 있음.
+		var strWindowFeatures = "menubar = yes,location = yes,resizable = yes,scrollbars = yes,status = yes";
+		function openWindow() {
+			newWindowObj = window.open("main.jsp", "메인", strWindowFeatures);
+		}
+	</script>
+			
+			
 		</ul>
+		
 		
 	<!--로그인 메뉴********  -->	
 	<nav id="menu">
