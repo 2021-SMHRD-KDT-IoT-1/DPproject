@@ -18,7 +18,6 @@
 		productDAO productDao = new productDAO();
 		String building_id = productDao.buildingId(dto.getId());
 		
-	
 		checklistDAO dao = new checklistDAO();
 		ArrayList<checklistDTO> list = dao.showBoard(building_id);
 		

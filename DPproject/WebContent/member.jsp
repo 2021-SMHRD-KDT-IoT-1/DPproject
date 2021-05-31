@@ -40,7 +40,7 @@
 
 		</div>
 
-
+		<%if(dto.getId().equals("master")) { %>
 		<ul class="banner">
 			<li><a href="select.jsp"> <span>뭐라고 할까요</span>
 					<p class="title">회원관리</p>
@@ -57,6 +57,19 @@
 					<p class="title">구매/대여목록</p>
 					<p class="s_title">뭐라고 할까요</p>
 			</a></li>
+			<%}else { %>
+			<ul class="banner">
+			<li><a href="member.jsp"> <span>뭐라고 할까요</span>
+					<p class="title">실시간화재감시</p>
+					<p class="s_title">뭐라고 할까요</p>
+			</a></li>
+			
+			<li><a href="WriteCheckList.jsp"> <span>뭐라고 할까요</span>
+					<p class="title">점검현황</p>
+					<p class="s_title">뭐라고 할까요</p>
+			</a></li>
+		</ul>
+		<% }%>
 		</ul>
 	</section>
 

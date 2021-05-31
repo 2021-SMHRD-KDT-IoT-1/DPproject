@@ -9,10 +9,10 @@
 <link href="css/intro.css" rel="stylesheet" type="text/css">
 <link href="css/menu.css" rel="stylesheet" type="text/css">
 
-
 </head>
 <body class="is-preload">
 	<section class="intro_top">
+	
 		<div class="slogan sprite">로고나 슬로건</div>
 		<p class="s_title">PreparEscape</p>
 		<ul class="banner">
