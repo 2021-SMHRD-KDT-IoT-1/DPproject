@@ -42,12 +42,19 @@
 
 
 		<ul class="banner">
-			<li><a href="#menu"> <span>뭐라고하징</span>
-					<p class="title"></p>
-					<p class="s_title">실시간 화재 감시</p>
+			<li><a href="select.jsp"> <span>뭐라고 할까요</span>
+					<p class="title">회원관리</p>
+					<p class="s_title">뭐라고 할까요</p>
 			</a></li>
-			<li><a href="ViewCheckList.jsp"> <span>PreparEscape</span>
-					<p class="title">점검현황</p>
+			
+			<li><a href="reportList.jsp"> <span>뭐라고 할까요</span>
+					<p class="title">고장신고목록</p>
+					<p class="s_title">뭐라고 할까요</p>
+			</a></li>
+			
+			</a></li>
+			<li><a href="ViewCheckList.jsp"> <span>뭐라고 할까요</span>
+					<p class="title">구매/대여목록</p>
 					<p class="s_title">뭐라고 할까요</p>
 			</a></li>
 		</ul>
