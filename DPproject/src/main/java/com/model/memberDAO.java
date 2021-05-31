@@ -108,5 +108,40 @@ public class memberDAO {
 		return dto;
 
 	}
+	public ArrayList<memberDTO> select() {
+
+		list = new ArrayList<memberDTO>();
+		conn();
+
+		try {
+			String sql = "select * from member";
+
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			while (rs.next()) {
+				String id = rs.getString(1);
+				String pw = rs.getString(2);
+				String name = rs.getString(3);
+				String tel = rs.getString(4);
+				String address = rs.getString(5);
+
+				dto = new memberDTO(id, pw, name, tel, address);
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			close();
+		}
+		return list;
+
+	}
 
 }
