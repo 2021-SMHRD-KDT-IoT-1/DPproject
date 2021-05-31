@@ -45,7 +45,7 @@
 			</tr>
 			
 			<tr>
-				<td><a href="main.jsp"><button>뒤로가기</button></a></td>
+				<td><a href="reportList.jsp"><button>뒤로가기</button></a></td>
 			</tr>
 			
 		</table>
