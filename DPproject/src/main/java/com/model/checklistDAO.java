@@ -50,11 +50,10 @@ public class checklistDAO {
 		conn();
 		
 		try {
-			String sql = "select * from checklist where building_id = ? order by product_id, check_date desc";
+			String sql = "select * from checklist where building_id=? order by product_id, check_date desc";
 			psmt = conn.prepareStatement(sql);
 			
 			psmt.setString(1, building_id);
-
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
@@ -66,7 +65,7 @@ public class checklistDAO {
 				String battery = rs.getString("battery");
 				String remarks = rs.getString("remarks");
 				
-				checklistDTO dto = new checklistDTO(num, product_id, building_id, check_date, state, battery, remarks);
+				checklistDTO dto = new checklistDTO(num, product_id, result_building_id, check_date, state, battery, remarks);
 				list.add(dto);
 			}
 		} catch (SQLException e) {

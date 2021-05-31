@@ -2,7 +2,6 @@ package com.model;
 
 public class memberDTO {
 
-	
 	private String id;
 	private String pw;
 	private String name;
@@ -22,6 +21,10 @@ public class memberDTO {
 		super();
 		this.id = id;
 		this.pw = pw;
+	}
+	
+	public memberDTO(String id) {
+		this.id = id;
 	}
 
 	public String getId() {
