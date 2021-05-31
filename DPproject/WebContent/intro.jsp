@@ -23,6 +23,7 @@
 			<li><a href="main.jsp"> <span>PreparEscape</span>
 					<p class="title">대#ㅣ</p>
 					<p class="s_title">홈페이지</p>
+					
 			</a></li>
 		</ul>
 		

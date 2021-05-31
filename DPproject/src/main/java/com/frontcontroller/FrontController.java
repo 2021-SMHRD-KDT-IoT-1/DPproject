@@ -12,6 +12,7 @@ import com.command.Command;
 import com.controller.ContactServiceCon;
 import com.controller.JoinServiceCon;
 import com.controller.LoginServiceCon;
+import com.controller.LogoutServiceCon;
 import com.controller.WriteCheckListServiceCon;
 import com.controller.WriteReport;
 
@@ -58,8 +59,10 @@ public class FrontController extends HttpServlet {
 		}else if (resultURI.equals("WriteCheckListServiceCon.do")) {
 			command = new WriteCheckListServiceCon();
 			
+		}else if (resultURI.equals("LogoutServiceCon.do")) {
+			command = new LogoutServiceCon();
+			
 		}
-		
 		String moveURL = command.execute(request, response);
 		response.sendRedirect(moveURL);
 	
