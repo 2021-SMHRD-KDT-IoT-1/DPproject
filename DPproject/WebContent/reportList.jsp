@@ -36,7 +36,7 @@
 			<%} %>
 
 		</table>
-		<a href="main.jsp#report"><button>뒤로가기</button></a>
+		<a href="member.jsp"><button>뒤로가기</button></a>
 	</div>
 	</article>
 </body>
