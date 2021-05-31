@@ -52,11 +52,11 @@ public class WriteReport implements Command {
 			if (cnt > 0) {
 				System.out.println("고장 신고 성공");
 
-				moveURL = "main.jsp";
+				moveURL = "alertO.jsp";
 			} else {
 				System.out.println("고장 신고 실패");
 				
-				moveURL = "main.jsp#report";
+				moveURL = "alertX.jsp";
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

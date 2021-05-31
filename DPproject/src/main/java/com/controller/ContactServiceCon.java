@@ -60,10 +60,10 @@ public class ContactServiceCon implements Command {
 			// 경로 쓸 때 파일명 뒤에 아이디 이름도 쓰면 됩니당~!~!~!~!~
 			if (cnt > 0) {
 				System.out.println("구매/대여 문의 성공");
-				moveURL = "main.jsp";
+				moveURL = "alertO.jsp";
 			} else {
 				System.out.println("구매/대여 문의 실패");
-				moveURL = "main.jsp#contact";
+				moveURL = "alertX.jsp";
 			}
 
 		} catch (IOException e) {
