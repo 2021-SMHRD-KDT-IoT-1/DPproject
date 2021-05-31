@@ -184,6 +184,11 @@
 			<ul class="copyright">
 				<li>&copy; Untitled.</li>
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				<%if(dto!=null){ %>
+				<li><a href="member.jsp">Main</a></li>
+				<%}else { %>
+				<li><a href="intro.jsp">Main</a></li>
+				<%} %>
 			</ul>
 		</div>
 	</div>
