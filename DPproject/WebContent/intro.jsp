@@ -54,11 +54,12 @@
 				<li><input type="password" placeholder="PASSWORD" name="pw"></li>
 				<li><input type="submit" value="LOGIN" class="button fit"></li>
 			</form>
+			<a href = "#join"><botton>JOIN</botton></a>
 		</ul>
 	</nav>
 	
 	<!-- ******회원가입******** -->
-	<nav id = "#">
+	<nav id = "#join">
 		<ul class="actions vertical">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinServiceCon.do" method="post">
