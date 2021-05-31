@@ -12,9 +12,9 @@
 <meta charset="EUC-KR" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="../assets/css/main.css" />
 <noscript>
-	<link rel="stylesheet" href="assets/css/noscript.css" />
+	<link rel="stylesheet" href="../assets/css/noscript.css" />
 </noscript>
 
 </head>
@@ -120,18 +120,11 @@
 									style="resize: none;"></textarea>
 							</div>
 							<div class="col-12" align="right">
-								<input type="submit" value="접수" />
+								<input type="submit" value="작성" />
 							</div>
 						</div>
 					</div>
 				</form>
-							<%if(dto != null) {%>
-								<%if(dto.getId().equals("master")){ %>
-								<div class="col-12" align="left">
-								<a href = "reportList.jsp"><button>신고목록</button></a>
-								</div>
-								<%}%>
-								<%} %>
 			</article>			
 							
 			<!-- Contact -->
@@ -168,13 +161,6 @@
 						</div>
 					</div>
 				</form>
-								<%if(dto != null) {%>
-								<%if(dto.getId().equals("master")){ %>
-							<div class="col-12" align="left">
-								<a href="contactBoardMain.jsp"><button>문의목록</button></a>
-							</div>
-								<%}%>
-								<%} %>
 			</article>
 
 		</div>
@@ -185,20 +171,20 @@
 				<li>&copy; Untitled.</li>
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				<%if(dto!=null){ %>
-				<li><a href="member.jsp">Main</a></li>
+				<li><a href="../intro/member.jsp">Main</a></li>
 				<%}else { %>
-				<li><a href="intro.jsp">Main</a></li>
+				<li><a href="../intro/intro.jsp">Main</a></li>
 				<%} %>
 			</ul>
 		</div>
 	</div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
 
 </body>
 </html>

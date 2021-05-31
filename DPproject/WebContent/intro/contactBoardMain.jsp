@@ -48,7 +48,7 @@
 
 		</table>
 
-		<a href="main.jsp#contact"><button id="writer">뒤로가기</button></a> 
+		<a href="member.jsp"><button id="writer">뒤로가기</button></a> 
 		
 	</div>
 	<script src="assets/js/jquery.min.js"></script>

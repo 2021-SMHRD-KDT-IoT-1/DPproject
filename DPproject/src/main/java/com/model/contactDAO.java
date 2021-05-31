@@ -127,6 +127,28 @@ public class contactDAO {
 		return dto;
 	}
 	
-	
+	public int checkContact(contactDTO dto) {
+		int check =0 ;
+		
+		conn();
+		
+		try {
+			String sql = "select report_num from report where contact_tel=? and contact_filename=? and contact_title=?";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getTel());
+			psmt.setString(2, dto.getFilename());
+			psmt.setString(3, dto.getTitle());
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				check = rs.getInt("contact_num");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return check;
+	}
 
 }

@@ -134,4 +134,28 @@ public class reportDAO {
 		}
 		return dto;
 	}
+	
+	public int checkReport(reportDTO dto) {
+		int check =0 ;
+		
+		conn();
+		
+		try {
+			String sql = "select report_num from report where report_tel=? and report_filename=? and report_title=?";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getReport_tel());
+			psmt.setString(2, dto.getReport_filename());
+			psmt.setString(3, dto.getReport_title());
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				check = rs.getInt("report_num");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return check;
+	}
 }

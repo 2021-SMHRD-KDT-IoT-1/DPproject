@@ -10,8 +10,9 @@
 
 <script type="text/javascript">
 
-alert("실패");
-location.href = "main.jsp";
+alert("고장신고 실패");
+location.href = "main.jsp#report";
+
 </script>
 
 </body>

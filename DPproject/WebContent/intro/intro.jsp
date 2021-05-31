@@ -5,9 +5,9 @@
 <head>
 <title>대피</title>
 <meta charset="EUC-KR">
-<link href="css/basic.css" rel="stylesheet" type="text/css">
-<link href="css/intro.css" rel="stylesheet" type="text/css">
-<link href="css/menu.css" rel="stylesheet" type="text/css">
+<link href="../css/basic.css" rel="stylesheet" type="text/css">
+<link href="../css/intro.css" rel="stylesheet" type="text/css">
+<link href="../css/menu.css" rel="stylesheet" type="text/css">
 
 </head>
 <body class="is-preload">
@@ -37,7 +37,7 @@
 		// 변수 strWindowFeatures를 통해 새롭게 여는 웹 브라우저 창의 옵션들을 일일이 설정할 수 있음.
 		var strWindowFeatures = "menubar = yes,location = yes,resizable = yes,scrollbars = yes,status = yes";
 		function openWindow() {
-			newWindowObj = window.open("main.jsp", "메인", strWindowFeatures);
+			newWindowObj = window.open("../main/main.jsp", "메인", strWindowFeatures);
 		}
 	</script>
 			
@@ -91,13 +91,13 @@
 	</footer>
 
 	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/introutil.js"></script>
-		<script src="assets/js/intro.js"></script>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/introutil.js"></script>
+		<script src="../assets/js/intro.js"></script>
 
 </body>
 </html>

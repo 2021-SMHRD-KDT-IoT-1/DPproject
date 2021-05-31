@@ -51,8 +51,9 @@ public class WriteReport implements Command {
 			
 			if (cnt > 0) {
 				System.out.println("고장 신고 성공");
+				int check = dao.checkReport(dto);
 
-				moveURL = "alertO.jsp";
+				moveURL = "alertO.jsp?num="+check;
 			} else {
 				System.out.println("고장 신고 실패");
 				
