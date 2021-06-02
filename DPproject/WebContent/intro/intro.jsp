@@ -7,8 +7,8 @@
 <meta charset="EUC-KR">
 <link href="../css/basic.css" rel="stylesheet" type="text/css">
 <link href="../css/intro.css" rel="stylesheet" type="text/css">
-<!-- <link href="../css/menu.css" rel="stylesheet" type="text/css">
- -->
+<link href="../css/menu.css" rel="stylesheet" type="text/css">
+
 </head>
 <body class="is-preload">
 	<section class="intro_top">
@@ -28,7 +28,7 @@
 			</a></li>
  -->			
  			
- 			<li onclick="openWindow()"><span >PreparEscape</span>
+ 			<li onclick="openWindow()"><span>PreparEscape</span>
 				<p class="title">대#ㅣ</p>
 				<p class="s_title">홈페이지</p>
 			</li>
@@ -54,13 +54,13 @@
 				<li><input type="password" placeholder="PASSWORD" name="pw"></li>
 				<li><input type="submit" value="LOGIN" class="button fit"></li>
 			</form>
-			<a href = "#join"><botton>JOIN</botton></a>
+			<li><a href = "#join"><botton>JOIN</botton></a></li>
 		</ul>
 	</nav>
 	
 	<!-- ******회원가입******** -->
 	<nav id = "#join">
-		<ul class="actions vertical">
+		<ul class="links">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinServiceCon.do" method="post">
 				<li><input type="text" placeholder="ID를 입력하세요" name="id"></li>
@@ -73,8 +73,6 @@
 		</ul>
 	
 	</nav>
-	
-	
 	</section>
 
 
