@@ -19,7 +19,7 @@
 
 </head>
 <body class="is-preload">
-
+`
 <%
 	memberDTO dto = (memberDTO)session.getAttribute("dto");	
 %>

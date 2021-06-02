@@ -6,9 +6,9 @@
 <head>
 <meta charset="EUC-KR">
 <title>대#ㅣ</title>
-<link href="css/basic.css" rel="stylesheet" type="text/css">
-<link href="css/intro.css" rel="stylesheet" type="text/css">
-<link href="css/menu.css" rel="stylesheet" type="text/css">
+<link href="../css/basic.css" rel="stylesheet" type="text/css">
+<link href="../css/intro.css" rel="stylesheet" type="text/css">
+<link href="../css/menu.css" rel="stylesheet" type="text/css">
 
 <!-- 1. 로그인한 회원 주소, 아이디 출력 -->
 </head>

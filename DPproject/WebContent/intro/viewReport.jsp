@@ -37,7 +37,7 @@
 			</tr>
 			
 			<tr>
-				<td><img src="img/<%=result.getReport_filename() %>"></td>
+				<td><img src="../img/<%=result.getReport_filename() %>"></td>
 			</tr>
 			
 			<tr>

@@ -84,9 +84,6 @@ public class contactDAO {
 				contactDTO dto = new contactDTO(num, name, tel, fileName, title, content, datetime);
 				list.add(dto);
 				
-		
-				
-				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -128,23 +125,24 @@ public class contactDAO {
 	}
 	
 	public int checkContact(contactDTO dto) {
-		int check =0 ;
+		int check = 0;
 		
 		conn();
 		
 		try {
-			String sql = "select report_num from report where contact_tel=? and contact_filename=? and contact_title=?";
+			String sql = "select contact_num from contact where contact_tel=? and contact_filename=? and contact_title=?";
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, dto.getTel());
 			psmt.setString(2, dto.getFilename());
 			psmt.setString(3, dto.getTitle());
 			
-			rs = psmt.executeQuery();
+			rs = psmt.executeQuery(); 
 			
 			if(rs.next()) {
 				check = rs.getInt("contact_num");
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

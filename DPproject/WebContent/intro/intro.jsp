@@ -7,8 +7,8 @@
 <meta charset="EUC-KR">
 <link href="../css/basic.css" rel="stylesheet" type="text/css">
 <link href="../css/intro.css" rel="stylesheet" type="text/css">
-<link href="../css/menu.css" rel="stylesheet" type="text/css">
-
+<!-- <link href="../css/menu.css" rel="stylesheet" type="text/css">
+ -->
 </head>
 <body class="is-preload">
 	<section class="intro_top">

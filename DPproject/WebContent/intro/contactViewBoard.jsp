@@ -39,7 +39,7 @@
 					<tr>
 						<td colspan="2">
 							<%= dto.getContent() %>
-							<img src="img/<%= dto.getFilename() %>">
+							<img src="../img/<%= dto.getFilename() %>">
 						</td>
 					</tr>
 					<tr>

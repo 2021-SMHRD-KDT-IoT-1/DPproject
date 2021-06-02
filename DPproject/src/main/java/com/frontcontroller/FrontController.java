@@ -44,22 +44,22 @@ public class FrontController extends HttpServlet {
 		//업캐스팅 하기 위해
 		Command command = null;
 		
-		if(resultURI.equals("JoinServiceCon.do")) {
+		if(resultURI.equals("intro/JoinServiceCon.do")) {
 			command = new JoinServiceCon();	
 			
-		}else if(resultURI.equals("LoginServiceCon.do")) {
+		}else if(resultURI.equals("intro/LoginServiceCon.do")) {
 			command = new LoginServiceCon();	
 			
-		}else if (resultURI.equals("ContactServiceCon.do")) {
+		}else if (resultURI.equals("main/ContactServiceCon.do")) {
 			command = new ContactServiceCon();
 			
-		}else if (resultURI.equals("WriteReport.do")) {
+		}else if (resultURI.equals("main/WriteReport.do")) {
 			command = new WriteReport();
-		
-		}else if (resultURI.equals("WriteCheckListServiceCon.do")) {
+			
+		}else if(resultURI.equals("intro/WriteCheckListServiceCon.do")) {
 			command = new WriteCheckListServiceCon();
 			
-		}else if (resultURI.equals("LogoutServiceCon.do")) {
+		}else if (resultURI.equals("intro/LogoutServiceCon.do")) {
 			command = new LogoutServiceCon();
 			
 		}
