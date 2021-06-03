@@ -13,7 +13,7 @@
 
 <script type="text/javascript">
 alert("구매/대여 문의 성공");
-document.location.href="checkContact.jsp?num="+<%=num%>";
+document.location.href="checkContact.jsp?num="+<%=num%>;
 </script>
 
 </body>
