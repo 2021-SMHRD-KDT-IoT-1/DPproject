@@ -30,6 +30,17 @@ public class contactDTO {
 		this.title = title;
 		this.content = content;
 	}
+	
+
+	public contactDTO(int num, String name, String tel, String title, String content) {
+		super();
+		this.num = num;
+		this.name = name;
+		this.tel = tel;
+		this.title = title;
+		this.content = content;
+	}
+
 
 	public int getNum() {
 		return num;

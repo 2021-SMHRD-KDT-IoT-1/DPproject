@@ -12,7 +12,7 @@ public class contactDAO {
 	PreparedStatement psmt = null;
 	int cnt = 0;
 	ResultSet rs = null;
-
+	
 	public void conn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -148,5 +148,28 @@ public class contactDAO {
 		}
 		return check;
 	}
+	
 
+	public int update(contactDTO dto) {
+		conn();
+
+		String sql = "update contact set contact_name = ?, contact_tel = ?, contact_title = ?, contact_content = ? where contact_num=?";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getTel());
+			psmt.setString(3, dto.getTitle());
+			psmt.setString(4, dto.getContent());
+			psmt.setInt(5, dto.getNum());
+			
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
 }
