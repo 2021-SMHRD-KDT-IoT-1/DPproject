@@ -9,13 +9,14 @@
 <body>
 <%
 	int num = Integer.parseInt(request.getParameter("num"));
-%>
+%>	
 
 <script type="text/javascript">
-alert("고장신고 성공");
+	alert("고장신고 성공");
+	//확인 버튼을 클릭하면 checkReport.jsp로 이동
+	document.location.href="checkReport.jsp?num="+<%=num%>;
 </script>
 
-<%response.sendRedirect("checkReport.jsp?num="+num); %>
 
 </body>
 </html>

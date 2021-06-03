@@ -23,7 +23,7 @@ top: 0;
 </head>
 <body>
 
-<img src = "./images/error.png">
+<img src = "../images/error.png">
 
 
 </body>

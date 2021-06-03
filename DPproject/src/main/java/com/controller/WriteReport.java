@@ -56,8 +56,6 @@ public class WriteReport implements Command {
 				moveURL = "alertO.jsp?num="+check;
 			} else {
 				System.out.println("고장 신고 실패");
-				
-				moveURL = "alertX.jsp";
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
