@@ -32,6 +32,16 @@ public class reportDTO {
 		this.report_content = report_content;
 	}
 
+	public reportDTO(int report_num, String report_name, String report_tel, String report_title,
+			String report_content) {
+		super();
+		this.report_num = report_num;
+		this.report_name = report_name;
+		this.report_tel = report_tel;
+		this.report_title = report_title;
+		this.report_content = report_content;
+	}
+
 	public int getReport_num() {
 		return report_num;
 	}

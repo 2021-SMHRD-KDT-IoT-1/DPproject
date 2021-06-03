@@ -14,6 +14,7 @@ import com.controller.JoinServiceCon;
 import com.controller.LoginServiceCon;
 import com.controller.LogoutServiceCon;
 import com.controller.ModifyContactServiceCon;
+import com.controller.ModifyReportServiceCon;
 import com.controller.WriteCheckListServiceCon;
 import com.controller.WriteReport;
 
@@ -65,6 +66,10 @@ public class FrontController extends HttpServlet {
 			
 		}else if (resultURI.equals("main/ModifyContactServiceCon.do")) {
 			command = new ModifyContactServiceCon();
+			
+		}else if (resultURI.equals("main/ModifyReportServiceCon.do")) {
+			command = new ModifyReportServiceCon();
+			
 		}
 		
 		

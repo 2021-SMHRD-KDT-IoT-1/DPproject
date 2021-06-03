@@ -158,4 +158,27 @@ public class reportDAO {
 		}
 		return check;
 	}
+	
+	public int update(reportDTO dto) {
+		conn();
+
+		String sql = "update report set report_name = ?, report_tel = ?, report_title = ?, report_content = ? where report_num=?";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getReport_name());
+			psmt.setString(2, dto.getReport_tel());
+			psmt.setString(3, dto.getReport_title());
+			psmt.setString(4, dto.getReport_content());
+			psmt.setInt(5, dto.getReport_num());
+			
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
 }
