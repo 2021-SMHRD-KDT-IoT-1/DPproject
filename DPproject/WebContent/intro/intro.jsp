@@ -59,7 +59,7 @@
 	</nav>
 	
 	<!-- ******회원가입******** -->
-	<nav id = "#join">
+	<nav id = "join">
 		<ul class="links">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinServiceCon.do" method="post">
@@ -71,8 +71,8 @@
 				<li><input type="submit" value="JoinUs" class="button fit"></li>
 			</form>
 		</ul>
-	
 	</nav>
+	
 	</section>
 
 
