@@ -119,8 +119,14 @@
 								<input type="text" name="report_title" placeholder="제목" />
 							</div>
 							<div class="col-12">
-								<textarea name="report_content" placeholder="내용" rows="6"
-									style="resize: none;"></textarea>
+								<pre><textarea name="report_content" placeholder="내용" rows="6"
+									style="resize: none;">
+건물명 : 
+건물주소 :
+제품번호 : 
+상세내용 : 
+									
+									</textarea></pre>
 							</div>
 							<div class="col-12" align="right">
 								<input type="submit" value="작성" />
