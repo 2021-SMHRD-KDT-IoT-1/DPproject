@@ -109,7 +109,10 @@
 							
 							<!-- 파일첨부 추가 -->
 							<div>
-							<input name="report_filename" type="file" style="float: right;">
+							<form id="form1" runat="server">
+								<input type='file' onchange="readURL(this);" name="report_filename" />
+								<img id="blah"/>
+							</form>
 							</div>
 							
 							<div class="col-12">
@@ -144,9 +147,8 @@
 							</div>
 							
 							<!-- 파일첨부 추가 -->
-							<div>
-							<input name="fileName" type="file" style="float: right;">
-							</div>
+							<input type="file" name="fileName" id="image" accept="image/*" onchange="setThumbnail(event);" />
+							<div id="image_container"></div>
 							
 							<div class="col-12">
 								<input type="text" name="title" placeholder="제목" />
@@ -163,6 +165,7 @@
 				</form>
 			</article>
 
+
 		</div>
 
 		<!-- Footer -->
@@ -178,6 +181,29 @@
 			</ul>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					$('#blah').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+
+		function setThumbnail(event) {
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				var img = document.createElement("img");
+				img.setAttribute("src", event.target.result);
+				document.querySelector("div#image_container").appendChild(img);
+			};
+			reader.readAsDataURL(event.target.files[0]);
+		}
+	</script>
+
 
 	<!-- Scripts -->
 	<script src="../assets/js/jquery.min.js"></script>

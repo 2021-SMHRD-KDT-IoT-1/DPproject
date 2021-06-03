@@ -46,7 +46,7 @@
 			
 			<tr>
 				<td><a href="reportList.jsp"><button>수정</button></a></td>
-				<td><a href="reportList.jsp"><button>작성</button></a></td>
+				<td><a href="main.jsp#report"><button>작성</button></a></td>
 			</tr>
 			
 		</table>

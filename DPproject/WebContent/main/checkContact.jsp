@@ -44,7 +44,7 @@
 			</tr>
 			<tr>
 				<td colspan="2"><a href="#"><button>수정</button></a></td>
-				<td colspan="2"><a href="#"><button>작성</button></a></td>
+				<td colspan="2"><a href="main.jsp#contact"><button>작성</button></a></td>
 			</tr>
 		</table>
 	</div>

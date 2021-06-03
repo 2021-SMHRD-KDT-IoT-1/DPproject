@@ -65,7 +65,6 @@ public class ContactServiceCon implements Command {
 				moveURL = "contact_alertO.jsp?num="+check;
 			} else {
 				System.out.println("구매/대여 문의 실패");
-				moveURL = "contact_alertX.jsp";
 			}
 
 		} catch (IOException e) {
