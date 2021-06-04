@@ -41,7 +41,7 @@
 			</tr>
 			
 			<tr>
-				<td><%=result.getReport_content() %></td>
+				<td><textarea readonly rows="10" cols="40" style="resize:none;"><%=result.getReport_content() %></textarea></td>
 			</tr>
 			
 			<tr>
