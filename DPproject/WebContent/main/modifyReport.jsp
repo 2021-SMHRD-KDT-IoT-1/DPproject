@@ -40,7 +40,7 @@
 				<tr>
 					<td colspan="2">
 						<img src="../img/<%=result.getReport_filename() %>">
-						<textarea name="modifyReportContent"><%=result.getReport_content() %></textarea>
+						<textarea name="modifyReportContent" rows="6" style = "resize:none;" ><%=result.getReport_content() %></textarea>
 					</td>
 				</tr>
 				<tr>

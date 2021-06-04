@@ -43,7 +43,7 @@
 				<tr>
 					<td colspan="2">
 						<img src="../img/<%=dto.getFilename()%>">
-						<textarea name="ModifyContent"><%=dto.getContent()%></textarea>
+						<textarea name="ModifyContent" rows="6" style = "resize:none;" ><%=dto.getContent()%></textarea>
 					</td>
 				</tr>
 				<tr>

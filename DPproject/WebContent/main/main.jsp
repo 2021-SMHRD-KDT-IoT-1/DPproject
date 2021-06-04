@@ -119,14 +119,13 @@
 								<input type="text" name="report_title" placeholder="제목" />
 							</div>
 							<div class="col-12">
-								<pre><textarea name="report_content" placeholder="내용" rows="6"
+								<textarea name="report_content" placeholder="내용" rows="6"
 									style="resize: none;">
 건물명 : 
-건물주소 :
+건물주소 : 
 제품번호 : 
 상세내용 : 
-									
-									</textarea></pre>
+									</textarea>
 							</div>
 							<div class="col-12" align="right">
 								<input type="submit" value="작성" />
@@ -161,7 +160,12 @@
 							</div>
 							<div class="col-12">
 								<textarea name="content" placeholder="내용" rows="6"
-									style="resize: none;"></textarea>
+									style="resize: none;">
+건물명 : 
+건물주소 : 
+제품번호 : 
+상세내용 :
+									</textarea>
 							</div>
 							<div class="col-12" align="right">
 								<input type="submit" value="문의" />
