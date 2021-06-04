@@ -108,24 +108,22 @@
 							</div>
 							
 							<!-- 파일첨부 추가 -->
-							<div>
-							<form id="form1" runat="server">
-								<input type='file' onchange="readURL(this);" name="report_filename" />
-								<img id="blah"/>
-							</form>
-							</div>
+							<input type='file' name="report_filename"  accept="image/*" onchange="setThumbnail1(event);" />
+							<div id="image_container1"></div>
 							
 							<div class="col-12">
 								<input type="text" name="report_title" placeholder="제목" />
 							</div>
 							<div class="col-12">
+							<form>
 								<textarea name="report_content" placeholder="내용" rows="6"
-									style="resize: none;">
+									style="resize: none;" onKeyUp="javascript:fnChkByte(this,'1000')">
 건물명 : 
 건물주소 : 
 제품번호 : 
-상세내용 : 
-									</textarea>
+상세내용 : </textarea>
+									<span id="byteInfo">0</span> 1000bytes
+									</form>
 							</div>
 							<div class="col-12" align="right">
 								<input type="submit" value="작성" />
@@ -159,13 +157,15 @@
 								<input type="text" name="title" placeholder="제목" />
 							</div>
 							<div class="col-12">
+							<form>
 								<textarea name="content" placeholder="내용" rows="6"
-									style="resize: none;">
+									style="resize: none;" onKeyUp="javascript:fnChkByte1(this,'1000')">
 건물명 : 
 건물주소 : 
 제품번호 : 
-상세내용 :
-									</textarea>
+상세내용 :</textarea>
+<span id="byteInfo1">0</span> 1000bytes
+</form>
 							</div>
 							<div class="col-12" align="right">
 								<input type="submit" value="문의" />
@@ -193,15 +193,6 @@
 	</div>
 
 	<script type="text/javascript">
-		function readURL(input) {
-			if (input.files && input.files[0]) {
-				var reader = new FileReader();
-				reader.onload = function(e) {
-					$('#blah').attr('src', e.target.result);
-				}
-				reader.readAsDataURL(input.files[0]);
-			}
-		}
 
 		function setThumbnail(event) {
 			var reader = new FileReader();
@@ -211,6 +202,91 @@
 				document.querySelector("div#image_container").appendChild(img);
 			};
 			reader.readAsDataURL(event.target.files[0]);
+		}
+		function setThumbnail1(event) {
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				var img = document.createElement("img");
+				img.setAttribute("src", event.target.result);
+				document.querySelector("div#image_container1").appendChild(img);
+			};
+			reader.readAsDataURL(event.target.files[0]);
+		}
+		
+		function fnChkByte(obj, maxByte)
+		{
+		    var str = obj.value;
+		    var str_len = str.length;
+
+
+		    var rbyte = 0;
+		    var rlen = 0;
+		    var one_char = "";
+		    var str2 = "";
+
+
+		    for(var i=0; i<str_len; i++)
+		    {
+		        one_char = str.charAt(i);
+		        if(escape(one_char).length > 4) {
+		            rbyte += 2;                                         //한글2Byte
+		        }else{
+		            rbyte++;                                            //영문 등 나머지 1Byte
+		        }
+		        if(rbyte <= maxByte){
+		            rlen = i+1;                                          //return할 문자열 갯수
+		        }
+		     }
+		     if(rbyte > maxByte)
+		     {
+		        // alert("한글 "+(maxByte/2)+"자 / 영문 "+maxByte+"자를 초과 입력할 수 없습니다.");
+		        alert("메세지는 최대 " + maxByte + "byte를 초과할 수 없습니다.")
+		        str2 = str.substr(0,rlen);                                  //문자열 자르기
+		        obj.value = str2;
+		        fnChkByte(obj, maxByte);
+		     }
+		     else
+		     {
+		        document.getElementById('byteInfo').innerText = rbyte;
+		     }
+		}
+		
+		function fnChkByte1(obj, maxByte)
+		{
+		    var str = obj.value;
+		    var str_len = str.length;
+
+
+		    var rbyte = 0;
+		    var rlen = 0;
+		    var one_char = "";
+		    var str2 = "";
+
+
+		    for(var i=0; i<str_len; i++)
+		    {
+		        one_char = str.charAt(i);
+		        if(escape(one_char).length > 4) {
+		            rbyte += 2;                                         //한글2Byte
+		        }else{
+		            rbyte++;                                            //영문 등 나머지 1Byte
+		        }
+		        if(rbyte <= maxByte){
+		            rlen = i+1;                                          //return할 문자열 갯수
+		        }
+		     }
+		     if(rbyte > maxByte)
+		     {
+		        // alert("한글 "+(maxByte/2)+"자 / 영문 "+maxByte+"자를 초과 입력할 수 없습니다.");
+		        alert("메세지는 최대 " + maxByte + "byte를 초과할 수 없습니다.")
+		        str2 = str.substr(0,rlen);                                  //문자열 자르기
+		        obj.value = str2;
+		        fnChkByte(obj, maxByte);
+		     }
+		     else
+		     {
+		        document.getElementById('byteInfo1').innerText = rbyte;
+		     }
 		}
 	</script>
 
