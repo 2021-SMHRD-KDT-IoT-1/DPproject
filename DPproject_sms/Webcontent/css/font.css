@@ -1,0 +1,12 @@
+@charset "EUC-KR";
+
+
+@font-face {
+  font-family: 'SunBatang-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+div{
+  font-family: 'SunBatang-Medium';
+}
