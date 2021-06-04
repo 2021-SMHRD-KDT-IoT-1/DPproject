@@ -27,12 +27,16 @@
 	<div id="board">
 		<table id="list">
 			<tr>
-				<td>제목</td>
-				<td><%= dto.getTitle() %></td>
-			</tr>
-			<tr>
 				<td>작성자</td>
 				<td><%= dto.getName() %></td>
+			</tr>
+			<tr>
+				<td>전화번호</td>
+				<td><%= dto.getTel() %></td>
+			</tr>
+			<tr>
+				<td>제목</td>
+				<td><%= dto.getTitle() %></td>
 			</tr>
 			<tr>
 				<td colspan="2">내용</td>

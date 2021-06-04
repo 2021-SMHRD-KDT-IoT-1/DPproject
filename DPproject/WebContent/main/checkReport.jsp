@@ -18,7 +18,7 @@
 <div id="board">
 		<table id="list">
 			<tr>
-				<td>이름</td>
+				<td>작성자</td>
 				<td><%=result.getReport_name() %></td>
 			</tr>
 			
