@@ -13,8 +13,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container/DPproject_backup0604"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/smhrd/Desktop/lib/javaSDK-2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/smhrd/Desktop/수업 자료/cos-20.08.zip"/>
-	<classpathentry kind="lib" path="C:/Users/smhrd/Desktop/lib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
