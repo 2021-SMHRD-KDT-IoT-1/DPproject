@@ -27,7 +27,10 @@
 					
 					<tr>
 						<td>상태구분</td>
-						<td><input type="text" name="state"> </td>
+						<td>
+						<input type="radio" name="state" value="정상">정상
+						<input type="radio" name="state" value="불량">불량
+						</td>
 					</tr>
 					
 					<tr>
