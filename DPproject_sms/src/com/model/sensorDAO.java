@@ -47,20 +47,48 @@ public class sensorDAO {
 	public int sensor_insert(String a) {
 		conn();
 		String[] arr = a.split(":");
-		
+
 		try {
-			String sql = "insert into sensor values(?, ?, ?)";
+			String sql = "insert into sensor values(sensor_num.nextval,?, ?, ?)";
 			psmt = conn.prepareStatement(sql);
-			
+
 			psmt.setString(1, arr[0]);
 			psmt.setString(2, arr[1]);
 			psmt.setString(3, arr[2]);
-			
+
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return cnt;
+	}
+
+	public SensorDTO sensorview(int sel) {
+		SensorDTO dto = null;
+		conn();
+		try {
+			String sql = "select * from sensor where sensor_num = ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, sel);
+
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				int sensor_num = rs.getInt("sensor_num");
+				int gas = rs.getInt("gas");
+				int fire = rs.getInt("fire");
+				int temp = rs.getInt("temp");
+				
+				dto = new SensorDTO(sensor_num, gas, fire, temp);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return dto;
 	}
 	
 	
