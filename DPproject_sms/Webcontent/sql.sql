@@ -61,6 +61,12 @@ CREATE TABLE contact (
 	datetime		date		NOT NULL
 );
 
+create table sensor(
+sensor_num number,
+gas number,
+fire number,
+temp number);
+
 ALTER TABLE member ADD CONSTRAINT "PK_MEMBER" PRIMARY KEY (
 	id
 );
@@ -125,3 +131,10 @@ CREATE SEQUENCE check_num
 INCREMENT BY 1
 START WITH 1
 MINVALUE 1;
+
+CREATE SEQUENCE sensor_num
+MINVALUE 1
+MAXVALUE 100
+INCREMENT BY 1
+START WITH 1
+CYCLE ;
