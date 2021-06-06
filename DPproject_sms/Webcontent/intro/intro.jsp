@@ -73,21 +73,23 @@
 		</ul>
 	</nav>
 	
-	</section>
+	
 
 
 	<!--푸터영역 -->
 	<footer id="intro_footer">
-		<div class="container">
-			<h1 class="logo_bottom sprite">화생방 로고</h1>
+		<div>
+			<!-- <h1 class="logo_bottom sprite">화생방 로고</h1> -->
 			<div class="copyright">
-				<p>
-					<br> 대표전화 <b>062)000-0000</b>
+				<p> 
+				<span>화생방</span> 
+				<span>Call : 062)000-0000</span> 
 				</p>
 			</div>
 		</div>
 	</footer>
-
+	
+</section>
 	<!-- Scripts -->
 		<script src="../assets/js/jquery.min.js"></script>
 		<script src="../assets/js/jquery.scrolly.min.js"></script>
