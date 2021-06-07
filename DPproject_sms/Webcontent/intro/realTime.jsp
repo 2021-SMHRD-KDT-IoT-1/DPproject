@@ -37,7 +37,12 @@
 			<span></span>
 			<span></span>
 		</div>
-
+		<div>
+			<button>대피로1</button>
+				<button>대피로2</button>
+				<button>대피로3</button>
+				<button>대피로4</button>
+		</div>
 	</section>
 
 
