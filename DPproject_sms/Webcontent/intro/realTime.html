@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Floor Map Example - Leaflet</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+      <!-- Load Leaflet from CDN -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+
+
+      <!-- Personal style and script file links -->
+ <!--     <link rel="stylesheet" href="css/style.css">
+      <script src="js/script.js" type="text/javascript" defer></script>-->
+   
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+      
+      
+   <script type="text/javascript" src="../assets/js/leaflet.ajax.min.js"></script>  
+
+      
+   
+</head>
+
+<body>
+
+	<section class="intro_top">
+		<div class="slogan sprite">로고나 슬로건</div>
+		<p class="s_title">소제목</p>
+		<ul>
+			<li><a><span>건물1</span></a>
+					<ul>
+						<li>1F</li>
+						<li>2F</li>
+						<li>3F</li>
+					</ul>
+			</li>
+			<li><a> <span>건물2</span></a>
+					<ul>
+						<li>1F</li>
+						<li>2F</li>
+						<li>3F</li>
+					</ul>
+			</li>
+		</ul>
+		
+<div id="map" style="width: 800px; height: 600px;"></div>
+	<span>
+				<button id = "btna1">기계1</button>
+				<button id = "btna2">기계2</button>
+				<button id = "btna3">기계3</button>
+				<button id = "btna4">기계4</button>
+			</span>
+			<span></span>
+			<span></span>
+		</div>
+		<div>
+				<button id = "btnb1">대피로1</button>
+				<button id = "btnb2">대피로2</button>
+				<button id = "btnb3">대피로3</button>
+				<button id = "btnb4">대피로4</button>
+				
+<script>
+document.getElementById("btna1").addEventListener("click", btnclk1);
+function btnclk1(){
+     var b = L.imageOverlay("../images/temp/aespa.jpg", bounds).addTo(map);
+}
+document.getElementById("btna2").addEventListener("click", btnclk2);
+function btnclk2(){
+     var b = L.imageOverlay("../images/temp/butter.jpg", bounds).addTo(map);
+}
+document.getElementById("btna3").addEventListener("click", btnclk3);
+function btnclk3(){
+     var b = L.imageOverlay("../images/temp/stayc.jpg", bounds).addTo(map);
+}
+document.getElementById("btna4").addEventListener("click", btnclk4);
+function btnclk4(){
+     var b = L.imageOverlay("../images/temp/iu.jpg", bounds).addTo(map);
+}
+document.getElementById("btnb1").addEventListener("click", btnclk5);
+function btnclk5(){
+     var b = L.imageOverlay("../images/temp/omy.jpg", bounds).addTo(map);
+}
+document.getElementById("btnb2").addEventListener("click", btnclk6);
+function btnclk6(){
+     var b = L.imageOverlay("../images/temp/brave.jpg", bounds).addTo(map);
+}
+document.getElementById("btnb3").addEventListener("click", btnclk7);
+function btnclk7(){
+     var b = L.imageOverlay("../images/temp/mars.jpg", bounds).addTo(map);
+}
+document.getElementById("btnb4").addEventListener("click", btnclk8);
+function btnclk8(){
+     var b = L.imageOverlay("../images/temp/gg.jpg", bounds).addTo(map);
+}
+
+
+</script>
+				
+				
+				
+		</div>
+	</section>
+	
+	<!--푸터영역 -->
+	<footer id="intro_footer">
+		<div>
+			<h1 class="logo_bottom sprite">화생방 로고</h1>
+			<div class="copyright">
+				<p>
+					<br> 대표전화 <b>062)000-0000</b>
+				</p>
+			</div>
+		</div>
+	</footer>
+	
+	
+	
+<script>
+     
+    var map = L.map('map', {crs: L.CRS.Simple});
+    var bounds = [[0,0], [600,800]]; // Set the image resolution as the boundary
+    L.imageOverlay("../images/temp/final.png", bounds).addTo(map); // Set the background image
+    
+    
+    
+    var save41 = new L.GeoJSON.AJAX("MonitorServiceCon", {onEachFeature:popUp});
+    function popUp(feature, layer) {
+        layer.bindTooltip(feature.properties.gas, {permanent: true, direction: 'center'}).openTooltip();
+        }
+	save41.addTo(map);
+      
+    
+	
+	map.fitBounds(bounds); // Set an area
+	
+	//GeoJson이라는 건데 제이슨인데 리플렛용 제이슨 같음 이렇게 제이슨을 선언하면 바로 맵에 그 정보가 나타남
+    var roomcounter = {
+    "type": "Feature",
+    "properties": {
+        "name": "counter",
+        "flame": "",   //이 구역은 이러한 정보를 담고있다는 것임
+        "gas": "",
+        "temp": "",
+    },
+    "geometry": { // 좌표정보 적는 곳
+        "type": "Polygon", //만약 여기를 직선으로 선언하면 아래 좌표를  [40, 180],   [40, 340] 두개만 선언하면 됨
+                            //지금은 다각형으로 선언해서 좌표 4개를 찍어서 사각형으로 만들었음
+        "coordinates": [[
+        [40, 180],
+        [40, 340],    
+        [180, 340],
+        [180, 180],         
+        ]]
+    }
+};
+ 
+    //GepJson 스타일 바꿀려고 스타일 유형을 미리 지정해놓음(빨주노초파남보)
+      var myStyle1 = {
+           "color": "#ff7800",
+           "weight": 5,
+           "opacity": 0.65
+       };
+           
+      a1 = L.geoJSON(roomcounter, {
+               style: myStyle1
+               }).addTo(map);
+
+           
+    </script>
+    </body>
+    </html>
