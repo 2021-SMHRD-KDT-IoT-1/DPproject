@@ -4,6 +4,9 @@ DROP TABLE exit;
 DROP TABLE checklist;
 DROP TABLE report;
 DROP TABLE contact;
+DROP TABLE sensor;
+
+select * from sensor;
 
 DROP SEQUENCE report_num;
 DROP SEQUENCE check_num;
@@ -66,6 +69,8 @@ sensor_num number,
 gas number,
 fire number,
 temp number);
+
+insert into sensor values(1, 1, 1, 1);
 
 ALTER TABLE member ADD CONSTRAINT "PK_MEMBER" PRIMARY KEY (
 	id
@@ -131,10 +136,3 @@ CREATE SEQUENCE check_num
 INCREMENT BY 1
 START WITH 1
 MINVALUE 1;
-
-CREATE SEQUENCE sensor_num
-MINVALUE 1
-MAXVALUE 100
-INCREMENT BY 1
-START WITH 1
-CYCLE ;

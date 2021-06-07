@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Ajax 간단 테스트</title>
- 
+
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
- 
+
 <script type="text/javascript" language="javascript">
   
 //자바스크립트용 팝업창 생성 함수 선언
@@ -16,10 +16,14 @@
 
  
  //에이젝스 통신 복붙
-       $.ajax({
-             
+
+function reload(){  setTimeout('location.reload()',5000); } 
+      
+
+         $.ajax({
+            
             type : "GET", //겟방식, 포스트방식
-            url : "SeonsorServiceCon?num=25", //ajaxData 서블릿에다가 id라는 변수 그리고 그 값이 asdf 라는 것을 전송
+            url : "SensorServiceCon?num=1", //ajaxData 서블릿에다가 id라는 변수 그리고 그 값이 asdf 라는 것을 전송
             dataType : "text",
             error : function(){
                 alert('통신실패!!');
@@ -28,18 +32,18 @@
             
             success : function(data){ 
                           
-              alert(data);
+               $("#dataArea").text(data);
+               reload();
             }
              
         });
-         
-         
+
+       
 </script>
- 
+
 </head>
 <body>
- 
-    <div id="dataArea"></div>
- 
+
+	<div id="dataArea"></div>
 </body>
 </html>

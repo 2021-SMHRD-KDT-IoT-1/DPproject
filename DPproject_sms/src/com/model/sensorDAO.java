@@ -43,13 +43,13 @@ public class sensorDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	public int sensor_insert(String a) {
+
+	public int sensor_update(String a) {
 		conn();
 		String[] arr = a.split(":");
 
 		try {
-			String sql = "insert into sensor values(sensor_num.nextval,?, ?, ?)";
+			String sql = "update sensor set gas = ?, fire = ?, temp = ? where sensor_num = 1";
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, arr[0]);
@@ -73,13 +73,13 @@ public class sensorDAO {
 			psmt.setInt(1, sel);
 
 			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				int sensor_num = rs.getInt("sensor_num");
 				int gas = rs.getInt("gas");
 				int fire = rs.getInt("fire");
 				int temp = rs.getInt("temp");
-				
+
 				dto = new SensorDTO(sensor_num, gas, fire, temp);
 			}
 
@@ -90,6 +90,5 @@ public class sensorDAO {
 		}
 		return dto;
 	}
-	
-	
+
 }
