@@ -20,7 +20,7 @@ public class SensorServiceCon extends HttpServlet {
 			throws ServletException, IOException {
 
 		// String moveURL = null;
-
+		request.setCharacterEncoding("EUC-KR");
 		int a = Integer.parseInt(request.getParameter("num"));
 
 		System.out.println(a);
@@ -29,11 +29,37 @@ public class SensorServiceCon extends HttpServlet {
 		sensorDAO dao = new sensorDAO();
 		SensorDTO resultDTO = dao.sensorview(a);
 
-		out.println(resultDTO.getGas());
-		out.println(resultDTO.getFire());
-		out.println(resultDTO.getTemp());
+		int gas = resultDTO.getGas();
+		int fire = resultDTO.getFire();
+		int temp = resultDTO.getTemp();
+		
 		System.out.println(resultDTO.getGas());
+		
+
+		String answer = "{\"geometry\": {\"type\": \"Point\", \"coordinates\": [110, 240]}, \"type\": \"Feature\", \"properties\": {\"gas\": \"" + gas +  "\"" + "}}";
+		out.print(answer);
+
+		
 
 	}
 
 }
+
+
+
+
+//String b = "{\"geometry\": {\"type\": \"Polygon\", \"coordinates\": [[[40, 180],[40, 340],[180, 340],[180, 180]]]}, \"type\": \"Feature\", \"properties\": {  \"gas\": \"44\"}}";
+
+	  //String b = request.getParameter("a");
+
+          
+    
+     
+   
+
+	
+		
+		
+		
+		
+	
