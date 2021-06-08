@@ -8,13 +8,18 @@
 </head>
 <body>
 <%
-	int num = Integer.parseInt(request.getParameter("num"));
+	String num = request.getParameter("num");
 %>	
 
 <script type="text/javascript">
 	alert("고장신고 성공");
-	//확인 버튼을 클릭하면 checkReport.jsp로 이동
-	document.location.href="checkReport.jsp?num="+<%=num%>;
+	//window.location.search
+/* 	const url = new URL("http://localhost:8096/DPproject_sms/main/alertO.jsp");
+	const urlParams = url.searchParams;
+	// URLSearchParams.get()
+	var reportnum = urlParams.get('num'); */
+	
+	document.location.href="main.jsp#checkReport?reportnum="<%=num%>;
 </script>
 
 

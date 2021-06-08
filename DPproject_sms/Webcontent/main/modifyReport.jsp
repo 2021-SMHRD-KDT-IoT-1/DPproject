@@ -12,10 +12,10 @@
 </head>
 <body>
 	<%
-	int num = Integer.parseInt(request.getParameter("num"));
+	int reportnum = Integer.parseInt(request.getParameter("reportnum"));
 	reportDAO dao = new reportDAO();
 
-	reportDTO result = dao.showOne(num);
+	reportDTO result = dao.showOne(reportnum);
 	
 	%>
 
