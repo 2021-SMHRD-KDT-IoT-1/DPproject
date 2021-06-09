@@ -47,7 +47,11 @@
 			</tr>
 
 			<tr>
+<<<<<<< HEAD
 				<td><a href="main.jsp?reportnum=<%=reportnum%>#modifyReport"><button>수정</button></a></td>
+=======
+				<td><a href="main.jsp?num=<%=reportnum %>#modifyReport"><button>수정</button></a></td>
+>>>>>>> branch 'mjh' of https://github.com/2021-SMHRD-KDT-IoT-1/DPproject.git
 				<td><a href="main.jsp#report"><button>작성</button></a></td>
 			</tr>
 		</table>
