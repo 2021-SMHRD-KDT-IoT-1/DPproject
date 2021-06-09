@@ -17,43 +17,44 @@
 
 	reportDTO result = dao.showOne(reportnum);
 %>
+	<div class="col-12">
 		<table>
-			<tr class="col-6">
+			<tr>
 				<td>작성자</td>
 				<td><%=result.getReport_name() %></td>
 			</tr>
 
-			<tr class="col-6">
+			<tr>
 				<td>전화번호</td>
 				<td><%=result.getReport_tel() %></td>
 			</tr>
 
-			<tr class="col-12">
+			<tr>
 				<td>제목</td>
 				<td><%=result.getReport_title() %></td>
 			</tr>
 
-			<tr class="col-12">
-				<td>내용</td>
-			</tr>
-
-			<tr class="col-12">
-				<td><img src="../img/<%=result.getReport_filename() %>"></td>
-			</tr>
-
-			<tr class="col-12">
-				<td><textarea readonly rows="10" cols="40"
-						style="resize: none;"><%=result.getReport_content() %></textarea></td>
+			<tr>
+				<td colspan = 2>
+				<img src="../img/<%=result.getReport_filename() %>">
+				</td>
 			</tr>
 
 			<tr>
-<<<<<<< HEAD
-				<td><a href="main.jsp?reportnum=<%=reportnum%>#modifyReport"><button>수정</button></a></td>
-=======
-				<td><a href="main.jsp?num=<%=reportnum %>#modifyReport"><button>수정</button></a></td>
->>>>>>> branch 'mjh' of https://github.com/2021-SMHRD-KDT-IoT-1/DPproject.git
-				<td><a href="main.jsp#report"><button>작성</button></a></td>
+				<td colspan = 2>
+					<textarea readonly rows="6" style="resize: none;" class="col-12">
+					<%=result.getReport_content() %>
+					</textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan = 2>
+				<a href="main.jsp?reportnum=<%=reportnum%>#modifyReport"><button>수정</button></a>
+				<a href="main.jsp#report"><button>작성</button></a>
+				</td>
 			</tr>
 		</table>
+	</div>
 </body>
 </html>

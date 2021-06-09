@@ -1364,7 +1364,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 			transition: none !important;
 		}
 
-	body, input, textarea, select {
+	body, input, textarea, select, table {
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 300;
 		color: #777777;
@@ -1374,7 +1374,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 		@media screen and (max-width: 1680px) {
 
-			body, input, textarea, select {
+			body, input, textarea, select, table {
 				font-size: 15pt;
 			}
 
@@ -1382,7 +1382,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 		@media screen and (max-width: 1280px) {
 
-			body, input, textarea, select {
+			body, input, textarea, select, table {
 				font-size: 14pt;
 			}
 
@@ -1390,7 +1390,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 		@media screen and (max-width: 736px) {
 
-			body, input, textarea, select {
+			body, input, textarea, select, table {
 				font-size: 12pt;
 			}
 
@@ -1398,7 +1398,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 		@media screen and (max-width: 360px) {
 
-			body, input, textarea, select {
+			body, input, textarea, select, table {
 				font-size: 11pt;
 			}
 
@@ -1481,14 +1481,30 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 	table {
 		width: 100%;
+		
+		color: #363636;
+		
+		display: block;
+		display: flex;
+		flex-wrap: wrap;
+		box-sizing: border-box;
+		align-items: stretch;
+		
+
 	}
 
 		table.default tbody tr {
 			border-bottom: solid 1px #f4f4f4;
 		}
 
-		table.default td {
+		table td {
 			padding: 0.5em 1em 0.5em 1em;
+			
+			-webkit-appearance: none;
+			border: 0;
+			background: #f4f4f4;
+			padding: 0.75em;
+			width: 100%;
 		}
 
 		table.default th {

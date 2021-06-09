@@ -53,13 +53,16 @@
 			<!-- 고장신고(report) -->
 			<article id="report" class="panel"></article>
 
-
-			<!-- report 시퀀스 넘버 가져오기 -->
-
 			<article id="checkReport" class="panel"></article>
+
+			<article id="modifyReport" class="panel"></article>
 
 			<!-- Contact -->
 			<article id="contact" class="panel"></article>
+
+			<article id="checkContact" class="panel"></article>
+
+			<article id="modifyContact" class="panel"></article>
 
 
 		</div>
