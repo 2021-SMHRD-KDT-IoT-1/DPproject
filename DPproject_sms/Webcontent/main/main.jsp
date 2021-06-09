@@ -23,8 +23,8 @@
 <%
 	memberDTO dto = (memberDTO)session.getAttribute("dto");
 
-	String reportnum= request.getParameter("reportnum");
-	System.out.println("메인확인번호 : "+reportnum);
+	String reportnum = request.getParameter("reportnum");
+	String contactnum = request.getParameter("contactnum");
 %>
 
 	<!-- Wrapper-->
@@ -216,19 +216,13 @@
 		
 		//고장신고
 		btnclick("report", "report.jsp");
+		btnclick("checkReport", "checkReport.jsp?reportnum="+<%=reportnum%>);
+		btnclick("modifyReport", "modifyReport.jsp?reportnum="+<%=reportnum%>);
 		
 		//구매문의
 		btnclick("contact", "contact.jsp");
-		
-		//그 외
-		
-		btnclick("checkReport", "checkReport.jsp?reportnum="+<%=reportnum%>);
-		
-		btnclick("modifyReport", "modifyReport.jsp"+<%=reportnum%>);
-
-/* 		btnclick("checkContact", "checkContact.jsp");
-		
-		btnclick("modifyContact", "modifyContact.jsp"); */
+ 		btnclick("checkContact", "checkContact.jsp?contactnum="+<%=contactnum%>);
+		btnclick("modifyContact", "modifyContact.jsp?contactnum="+<%=contactnum%>);
 				
 	</script>
 

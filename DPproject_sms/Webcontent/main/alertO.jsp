@@ -13,13 +13,7 @@
 
 <script type="text/javascript">
 	alert("고장신고 성공");
-	//window.location.search
-/* 	const url = new URL("http://localhost:8096/DPproject_sms/main/alertO.jsp");
-	const urlParams = url.searchParams;
-	// URLSearchParams.get()
-	var reportnum = urlParams.get('num'); */
-	
-	document.location.href="main.jsp#checkReport?reportnum="<%=num%>;
+	document.location.href="main.jsp?reportnum="+<%=num%>+"#checkReport";
 </script>
 
 

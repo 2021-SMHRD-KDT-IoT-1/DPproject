@@ -12,15 +12,14 @@
 
 	<%
 	// get 방식으로 보낸 num받아오기
-	  String get_num = request.getParameter("num");
+	  String get_num = request.getParameter("contactnum");
 	  System.out.println(get_num);
 	// String -> int 형변환
-	  int num = Integer.parseInt(get_num);
+	  int contactnum = Integer.parseInt(get_num);
 	
 	contactDAO dao = new contactDAO();
-	contactDTO dto = dao.showOne(num);
+	contactDTO dto = dao.showOne(contactnum);
 	
-		
 	System.out.println(dto.getNum());	
 	%>
 
@@ -54,7 +53,7 @@
 			</tr>
 				
 			<tr>
-				<td><a href="modifyContact.jsp?num=<%=num %>"><button>수정</button></a></td>
+				<td><a href="main.jsp?contactnum=<%=contactnum%>#modifyContact"><button>수정</button></a></td>
 				<td><a href="main.jsp#contact"><button>작성</button></a></td>
 			</tr>
 			

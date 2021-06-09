@@ -8,12 +8,12 @@
 </head>
 <body>
 <%
-	int num = Integer.parseInt(request.getParameter("num"));
+	String contactnum = request.getParameter("num");
 %>
 
 <script type="text/javascript">
 alert("구매/대여 문의 성공");
-document.location.href="checkContact.jsp?num="+<%=num%>;
+document.location.href="main.jsp?contactnum="+<%=contactnum%>+"#checkContact";
 </script>
 
 </body>

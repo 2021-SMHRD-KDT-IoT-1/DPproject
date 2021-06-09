@@ -36,7 +36,7 @@ public class ModifyReportServiceCon implements Command {
 			moveURL="main.jsp#report";
 		}else {
 			System.out.println("게시글 수정 실패");
-			moveURL="modifyReport.jsp";
+			moveURL="main.jsp?reportnum="+num+"#modifyReport";
 		}
 		
 		return moveURL;

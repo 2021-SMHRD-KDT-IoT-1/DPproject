@@ -36,7 +36,7 @@ public class ModifyContactServiceCon implements Command {
 			moveURL="main.jsp#contact";
 		}else {
 			System.out.println("게시글 수정 실패");
-			moveURL="modifyContact.jsp";
+			moveURL="main.jsp?contactnum="+num+"#modifyContact";
 		}
 		
 		return moveURL;

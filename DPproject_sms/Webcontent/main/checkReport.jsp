@@ -47,7 +47,7 @@
 			</tr>
 
 			<tr>
-				<td><a href="modifyReport.jsp?num=<%=reportnum %>"><button>수정</button></a></td>
+				<td><a href="main.jsp?reportnum=<%=reportnum%>#modifyReport"><button>수정</button></a></td>
 				<td><a href="main.jsp#report"><button>작성</button></a></td>
 			</tr>
 		</table>
