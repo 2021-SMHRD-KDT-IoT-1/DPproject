@@ -220,24 +220,8 @@
 		
 		//구매문의
 		btnclick("contact", "contact.jsp");
-<<<<<<< HEAD
  		btnclick("checkContact", "checkContact.jsp?contactnum="+<%=contactnum%>);
 		btnclick("modifyContact", "modifyContact.jsp?contactnum="+<%=contactnum%>);
-=======
-		
-		//그 외
-		
-		btnclick("checkReport", "checkReport.jsp?reportnum="+<%=reportnum%>);
-		
-		btnclick("modifyReport", "modifyReport.jsp"+<%=reportnum%>);
-
-		btnclick("checkContact", "checkContact.jsp");
-		
-		btnclick("modifyContact", "modifyContact.jsp");
->>>>>>> branch 'mjh' of https://github.com/2021-SMHRD-KDT-IoT-1/DPproject.git
-				
 	</script>
-
-
 </body>
 </html>
