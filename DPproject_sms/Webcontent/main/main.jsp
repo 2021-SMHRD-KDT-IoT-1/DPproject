@@ -1,3 +1,4 @@
+<%@page import="com.sun.jdi.Location"%>
 <%@page import="com.model.reportDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.reportDAO"%>
@@ -20,12 +21,17 @@
 </head>
 <body class="is-preload">
 
-<%
+	<%
 	memberDTO dto = (memberDTO)session.getAttribute("dto");
 
 	String reportnum= request.getParameter("reportnum");
-	System.out.println("메인확인번호 : "+reportnum);
-%>
+	if(reportnum != null)
+	{
+		System.out.println("메인확인번호 : "+reportnum);
+	}
+	
+	String contactnum = request.getParameter("contactnum");
+	%>
 
 	<!-- Wrapper-->
 	<div id="wrapper">
@@ -34,33 +40,31 @@
 		<nav id="nav">
 			<a href="#home" class="icon solid fa-home"><span>Home</span></a> <a
 				href="#company" class="icon solid fa-bold"><span>About</span></a> <a
-				href="#product" class="icon solid fa-fire"><span>Product</span></a> <a
-				href="#report" class="icon solid fa-bullhorn"><span>Report</span></a>
+				href="#product" class="icon solid fa-fire"><span>Product</span></a>
+			<a href="#report" class="icon solid fa-bullhorn"><span>Report</span></a>
 			<a href="#contact" class="icon solid fa-comments-dollar"><span>Contact</span></a>
 		</nav>
-		
+
 		<!-- Main -->
 		<div id="main">
 
 			<article id="home" class="panel intro"></article>
-			
+
 			<article id="company" class="panel intro"></article>
 
 			<!-- 제품 소개 -->
 			<article id="product" class="panel"></article>
 
 			<!-- 고장신고(report) -->
-			<article id="report" class="panel"></article>	
-			
-			
+			<article id="report" class="panel"></article>
+
+
 			<!-- report 시퀀스 넘버 가져오기 -->
 
- 			<article id="checkReport" class="panel"></article>
- 			
+			<article id="checkReport" class="panel"></article>
+
 			<!-- Contact -->
-			<article id="contact" class="panel">
-				
-			</article>
+			<article id="contact" class="panel"></article>
 
 
 		</div>
@@ -184,9 +188,9 @@
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
-	
+
 	<script src="../assets/js/jquery-3.6.0.min.js"></script>
-		<script type="text/javascript">
+	<script type="text/javascript">
 	
 		// 페이지 전환용 변수
 		/* 페이지 불러오기 (바꿀 div id입력 , 가져올 파일) */
@@ -226,9 +230,9 @@
 		
 		btnclick("modifyReport", "modifyReport.jsp"+<%=reportnum%>);
 
-/* 		btnclick("checkContact", "checkContact.jsp");
+		btnclick("checkContact", "checkContact.jsp");
 		
-		btnclick("modifyContact", "modifyContact.jsp"); */
+		btnclick("modifyContact", "modifyContact.jsp");
 				
 	</script>
 

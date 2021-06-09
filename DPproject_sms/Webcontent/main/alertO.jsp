@@ -19,7 +19,7 @@
 	// URLSearchParams.get()
 	var reportnum = urlParams.get('num'); */
 	
-	document.location.href="main.jsp#checkReport?reportnum="<%=num%>;
+	document.location.href="main.jsp?reportnum="+<%=num%>+"#checkReport";
 </script>
 
 
