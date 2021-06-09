@@ -24,20 +24,9 @@
 	<%
 	memberDTO dto = (memberDTO)session.getAttribute("dto");
 
-<<<<<<< HEAD
 	String reportnum = request.getParameter("reportnum");
 	String contactnum = request.getParameter("contactnum");
 %>
-=======
-	String reportnum= request.getParameter("reportnum");
-	if(reportnum != null)
-	{
-		System.out.println("메인확인번호 : "+reportnum);
-	}
-	
-	String contactnum = request.getParameter("contactnum");
-	%>
->>>>>>> branch 'mjh' of https://github.com/2021-SMHRD-KDT-IoT-1/DPproject.git
 
 	<!-- Wrapper-->
 	<div id="wrapper">
