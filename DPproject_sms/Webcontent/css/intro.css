@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url("../assets/css/font.css");
 
 html,body{  position:relative; overflow-x:hidden;}
 html.open,body.open{ overflow: hidden; }
@@ -9,11 +10,11 @@ html.open,body.open{ overflow: hidden; }
 .slogan{ display:block; text-indent:-9999px; width:188px; height:45px; margin:0 auto 10px auto; background-position:0 -350px; background-size:350px; z-index: 100   }
 
 .intro_top{ padding-top:20px; padding-bottom:20px; height: 100vh;}
-.intro_top > p{ font-family: 'Noto Serif KR'; font-weight:500; color:#fff;  text-align: center; line-height: 1.5}
+.intro_top > p{ font-family: 'SEBANG_Gothic_Bold'; font-weight:500; color:#fff;  text-align: center; line-height: 1.5}
 .intro_top > p.s_title{ font-size:18px; margin-bottom:30px;  }
 
 .banner{ width:90%; margin:0 auto; background: rgb(235,65,65); background:#fff; padding:0 25px; color:#262626; border-radius: 20px; overflow:hidden }
-.banner li{ font-family: 'Noto Serif KR'; border-bottom:#ccc solid 1px; text-align: center; padding:15px 0;  }
+.banner li{ font-family: 'SEBANG_Gothic_Bold'; border-bottom:#ccc solid 1px; text-align: center; padding:15px 0;  }
 .banner li span{ display: block; color:#b2b2b2; margin-bottom:10px; }
 .banner li p{ font-weight:bold; line-height: 1.3; }
 .banner li p.title{ font-size:20px; }
@@ -68,6 +69,5 @@ html.open,body.open{ overflow: hidden; }
   .banner li{ padding:50px 0 70px 0; }
   .banner li p.title{ font-size:35px; }
   .banner li p.s_title{ font-size:45px; margin-bottom:50px; }
-
 
 }

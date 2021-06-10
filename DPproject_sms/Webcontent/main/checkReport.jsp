@@ -34,7 +34,7 @@
 				<td><%=result.getReport_title() %></td>
 			</tr>
 
-			<tr>
+			<tr class="col-6">
 				<td colspan = 2>
 				<img src="../img/<%=result.getReport_filename() %>">
 				</td>

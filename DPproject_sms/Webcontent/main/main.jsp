@@ -17,11 +17,10 @@
 <noscript>
 	<link rel="stylesheet" href="../assets/css/noscript.css" />
 </noscript>
-
 </head>
 <body class="is-preload">
 
-	<%
+s<%
 	memberDTO dto = (memberDTO)session.getAttribute("dto");
 
 	String reportnum = request.getParameter("reportnum");

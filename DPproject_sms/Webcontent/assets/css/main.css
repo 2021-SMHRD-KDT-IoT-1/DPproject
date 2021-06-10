@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
 @import url("fontawesome-all.min.css");
+@import url("../assets/css/font.css");
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -1365,7 +1365,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 		}
 
 	body, input, textarea, select, table {
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Y_Spotlight';
 		font-weight: 300;
 		color: #777777;
 		font-size: 20pt;
