@@ -34,9 +34,14 @@ public class SensorServiceCon extends HttpServlet {
 		int temp = resultDTO.getTemp();
 		
 		System.out.println(resultDTO.getGas());
+		System.out.println(resultDTO.getFire());
+		System.out.println(resultDTO.getTemp());
 		
 
-		String answer = "{\"geometry\": {\"type\": \"Point\", \"coordinates\": [110, 240]}, \"type\": \"Feature\", \"properties\": {\"gas\": \"" + gas +  "\"" + "}}";
+//		String answer = "{\"geometry\": {\"type\": \"Point\", \"coordinates\": [110, 240]}, \"type\": \"Feature\", \"properties\": {\"gas\": \"" + gas +  "\"" + " + \"fire\" : \"" + fire + "\"" + " + \"fire\" : \"" + temp + "\"" + " }}";
+		//String answer = "{\"geometry\": {\"type\": \"Point\", \"coordinates\": [274, 300]}, \"type\": \"Feature\", \"properties\": {\"gas\": \"" + gas + "\", \"fire\" : \"" + fire + "\", \"temp\" : \"" +temp + "\"" + "}, \"geometry\": {\"type\": \"Point\", \"coordinates\": [100, 100]}, \"type\": \"Feature\", \"properties\": {\"gas\": \"" + gas + "\", \"fire\" : \"" + fire + "\", \"temp\" : \"" +temp + "\"" + "}}"; 
+		String answer =  "[{\"geometry\": {\"type\": \"Point\", \"coordinates\": [274, 300]}, \"type\": \"Feature\", \"properties\": {\"gas\": \"" + gas + "\", \"fire\" : \"" + fire + "\", \"temp\" : \"" +temp + "\"" + "}}, {\"geometry\": {\"type\": \"Point\", \"coordinates\": [575, 395]}, \"type\": \"Feature\", \"properties\": {\"gas\": \"" + gas + "\", \"fire\" : \"" + fire + "\", \"temp\" : \"" +temp + "\"" + "}}]";
+		
 		out.print(answer);
 
 		

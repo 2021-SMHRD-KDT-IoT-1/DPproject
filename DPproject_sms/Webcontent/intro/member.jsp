@@ -92,13 +92,56 @@
 	</footer>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/introutil.js"></script>
-	<script src="assets/js/intro.js"></script>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/jquery.scrollex.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/introutil.js"></script>
+	<script src="../assets/js/intro.js"></script>
+	
+		<script type="text/javascript" language="javascript">
+   var popupObj;
+   function popupOpen(){
+      var popUrl = "firepopup.html";  
+      var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+      popupObj = window.open(popUrl,"",popOption);
+   }
+
+   function closePopup(){
+      if(popupObj!=undefined){
+         popupObj.close();
+         popupObj=undefined;
+      }
+   }
+
+   
+   setInterval(function(){
+        $.ajax({          
+            type : "GET", //겟방식, 포스트방식
+            url : "../FirepopupServiceCon?num=1", //ajaxData 서블릿에다가 id라는 변수 그리고 그 값이 asdf 라는 것을 전송
+            dataType : "text",
+            error : function(){
+                alert('통신실패!!');
+            },                          
+            success : function(data){                          
+              
+            	if (data==1)
+            		
+            		{
+            		
+            		popupOpen();
+            		          		
+            		}        	
+                                         
+            }
+            	           
+        });
+    }, 2000);	
+   
+   </script>	
+	
+	
 
 </body>
 </html>

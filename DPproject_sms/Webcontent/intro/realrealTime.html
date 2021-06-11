@@ -19,19 +19,71 @@ crossorigin=""></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>          
 <script type="text/javascript" src="../assets/js/leaflet.ajax.min.js"></script>   
-</head>
 
+
+<style>
+
+#header {
+	background-color : green;
+	width : 100%;
+	height : 100px;
+}
+
+#section {
+	background-color : red;
+	width : 15%;
+	height : 700px;
+	float : left;
+}
+
+#map {
+background-color : blue;
+width : 85%;
+height : 650px;
+box-sizing : border-box;
+float : left;
+}
+
+#Aside_bottom {
+background-color : green;
+width : 85%;
+height : 25px;
+box-sizing : border-box;
+float : left;
+}
+
+#escape {
+background-color : green;
+width : 85%;
+height : 25px;
+box-sizing : border-box;
+float : left;
+}
+
+#intro_footer {
+background-color : red;
+height : 130px;
+box-sizing : border-box;
+clear:both;
+}
+
+
+</style>
+
+
+</head>
 <body>
-	<section class="intro_top">
 		
-<div class="slogan sprite">로고나 슬로건</div>
+<div class="slogan sprite" id = "header">로고나 슬로건</div>
+
+		<div id = "section">
 		<p class="s_title">소제목</p>
 		<ul>
 			<li><a><span>건물1</span></a>
 					<ul>
-						<li>1F</li>
-						<li>2F</li>
-						<li>3F</li>
+						<a href = "#"><li>1F</li></a>
+						<a href = "#"><li>2F</li></a>
+						<a href = "#"><li>3F</li></a>
 					</ul>
 			</li>
 			<li><a> <span>건물2</span></a>
@@ -43,68 +95,21 @@ crossorigin=""></script>
 			</li>
 		</ul>
 		
-<div id="map" style="width: 800px; height: 600px;"></div>
-			<span></span>
-			<span></span>
-			<span></span>
-			<button id = "normal">기본</button>
-			
 		</div>
-		<div>
-				<button id = "btnb1">대피로1</button>
-				<button id = "btnb2">대피로2</button>
-				<button id = "btnb3">대피로3</button>
-				<button id = "btnb4">대피로4</button>
-				
-<script>
-
-document.getElementById("normal").addEventListener("click", nomal);
-function nomal(){
-     var b = L.imageOverlay("../images/temp/final.png", bounds).addTo(map);
-}
-
-document.getElementById("btnb1").addEventListener("click", btnclk5);
-function btnclk5(){
-     var b = L.imageOverlay("../images/temp/exit1.png", bounds).addTo(map);
-}
-
-document.getElementById("btnb2").addEventListener("click", btnclk6);
-function btnclk6(){
-     var b = L.imageOverlay("../images/temp/exit2.png", bounds).addTo(map);
-}
-
-document.getElementById("btnb3").addEventListener("click", btnclk7);
-function btnclk7(){
-     var b = L.imageOverlay("../images/temp/exit3.png", bounds).addTo(map);
-}
-
-document.getElementById("btnb4").addEventListener("click", btnclk8);
-function btnclk8(){
-     var b = L.imageOverlay("../images/temp/exit4.png", bounds).addTo(map);
-}
-</script>	
-		</div>
-	</section>
 	
-	<!--푸터영역 -->
-	<footer id="intro_footer">
-		<div>
-			<h1 class="logo_bottom sprite">화생방 로고</h1>
-			<div class="copyright">
-				<p>
-					<br> 대표전화 <b>062)000-0000</b>
-				</p>
-			</div>
-		</div>
-	</footer>
-			
+	
+
+
+<div id = "map">			
 <script>
 //----------------------------------지도 기본 세팅 --------------------------------------------     
     var map = L.map('map', {crs: L.CRS.Simple});
-    var bounds = [[0,0], [600,800]]; // Set the image resolution as the boundary
+    var bounds = [[0,0], [600,1000]]; // Set the image resolution as the boundary
     L.imageOverlay("../images/temp/final.png", bounds).addTo(map); // Set the background image
   	map.fitBounds(bounds); // Set an area
 //---------------------------------------------------------------------------------------    
+
+
 
 //----------------------------------아이콘 변경 기능------------------------------------------
   //나중에 써먹을라고(그때 미희샘이 아두이노할 때 트루 펄스 이걸로 막 조건문 제어하는거임)  
@@ -123,14 +128,20 @@ function btnclk8(){
         popupAnchor: [0,-15]
         }); 
      
-    L.circle([400, 300], {color: 'green',radius: 20}).addTo(map)//(30,50)좌표에 원 생성
-    .on("click", circleClick);// .on("click", 사용자정의함수) 형식같은데, 클릭시 사용자정의함수를 실행시키라는 함수임 
+    L.circle([390, 575], {color: 'green',radius: 20}).addTo(map)//(30,50)좌표에 원 생성
+    .bindTooltip("A", {permanent: true, direction: 'center'}).openTooltip();
+    // .on("click", circleClick);// .on("click", 사용자정의함수) 형식같은데, 클릭시 사용자정의함수를 실행시키라는 함수임 
      
+    
+    L.circle([300, 275], {color: 'green',radius: 20}).addTo(map)
+    .bindTooltip("B", {permanent: true, direction: 'center'}).openTooltip();
+    
+    
 
     function circleClick(e) {// e는 그 클릭된 대상같음
         var clickedCircle = e.target; //클릭된 대상을 변수에 저장햇음
         clickedCircle.remove(); // 원 삭제 기능
-        L.marker([400, 300], {icon: firefoxIcon}).addTo(map).on("click", markerClick);
+        L.marker([390, 575], {icon: firefoxIcon}).addTo(map).on("click", markerClick);
         // 원을 삭제하고 아이콘을 그 위치에 생성한 거임 (근데 리플렛은 아이콘생성할려면 리플렛 고유의 "마커"라는 
         // 개체를 생성하고 거기에 붙여야 하는 거같음 그래서 마커만들고 거기에 아이콘 붙이고 그것을 맵에다 붙이고 그것에 
         // 클릭시 실행할 사용자정의함수를 붙였음 )
@@ -157,7 +168,17 @@ function btnclk8(){
 
 // -----------------------------------리플렛 용 Ajax통신하는 기능----------------------------------    
     function popUp(feature, layer) {
-        layer.bindTooltip(feature.properties.gas, {permanent: true, direction: 'center'}).openTooltip();
+        layer.bindTooltip(
+        		"가스 : " + feature.properties.gas + "  " +
+        		"불 : " + feature.properties.fire + "   "  +
+        		"온도 : " + feature.properties.temp , {permanent: true, direction: 'center'}).openTooltip();
+        }   
+      
+     function popUp2(feature, layer) {
+        layer.bindTooltip(
+        		"가스 : " + feature2.properties2.gas2 + "  " +
+        		"불 : " + feature2.properties2.fire2 + "   "  +
+        		"온도 : " + feature2.properties2.temp2 , {permanent: true, direction: 'center'}).openTooltip();
         }   
       
 /*    function changeColor(feature,layer) {
@@ -236,7 +257,7 @@ function btnclk8(){
     }  */
     
     setInterval(function(){
-    	new L.GeoJSON.AJAX(".././src/SensorServiceCon", {onEachFeature:popUp}).addTo(map)}, 2000);
+    	new L.GeoJSON.AJAX("../SensorServiceCon?num=1", {onEachFeature:popUp}).addTo(map)}, 2000);
 //       new L.GeoJSON.AJAX("MonitorServiceCon", {onEachFeature:changeColor}).addTo(map)}, 2000);
 //----------------------------------------------------------------------------------------  
 
@@ -259,14 +280,33 @@ function btnclk8(){
         "type": "Polygon", //만약 여기를 직선으로 선언하면 아래 좌표를  [40, 180],   [40, 340] 두개만 선언하면 됨
                             //지금은 다각형으로 선언해서 좌표 4개를 찍어서 사각형으로 만들었음
         "coordinates": [[
-        [40, 180],
-        [40, 340],    
-        [180, 340],
-        [180, 180],         
+        [70, 110],
+        [70, 540],    
+        [540, 540],
+        [540, 110],         
         ]]
     }
 };
- 
+
+ 	     var roomcounter2 = {
+    	    "type": "Feature",
+    	    "properties": {
+    	        "name": "counter2",
+    	        "flame": "",   //이 구역은 이러한 정보를 담고있다는 것임
+    	        "gas": "",
+    	        "temp": "",
+    	    },
+    	    "geometry": { // 좌표정보 적는 곳
+    	        "type": "Polygon", //만약 여기를 직선으로 선언하면 아래 좌표를  [40, 180],   [40, 340] 두개만 선언하면 됨
+    	                            //지금은 다각형으로 선언해서 좌표 4개를 찍어서 사각형으로 만들었음
+    	        "coordinates": [[
+    	        [350, 160],
+    	        [350, 540],    
+    	        [730, 540],
+    	        [730, 160],         
+    	        ]]
+    	    }
+    	};  
     //GepJson 스타일 바꿀려고 스타일 유형을 미리 지정해놓음(빨주노초파남보)
      
       var myStyle1 = {
@@ -317,17 +357,119 @@ function btnclk8(){
                   "weight": 5,
                   "opacity": 0.65
               };
+              
+              var myStyle9 = {
+                      "color": "#87CEEB",
+                      "weight": 5,
+                      "opacity": 0.65
+                  };
     
-      	
-    
-           
-      a1 = L.geoJSON(roomcounter, {
-               style: myStyle1
-               }).addTo(map);          
- //--------------------------------------------------------------------------------------      
-   
-
- 
+    //-------------------------------------------------------------------------------------- 
     </script>
+	</div>   
+	
+	
+
+		
+				<div>
+			<div id="Aside_bottom" > <!-- style="width: 800px; height: 600px;" -->
+			<span></span>
+			<span></span>
+			<span></span>
+			<button id = "normal">기본</button>		
+			</div>
+		
+			<div id = "escape">
+				<button id = "btnb1">대피로1</button>
+				<button id = "btnb2">대피로2</button>
+				<button id = "btnb3">대피로3</button>
+				<button id = "btnb4">대피로4</button>
+			</div>	
+		</div>
+	
+<script>
+
+document.getElementById("normal").addEventListener("click", nomal);
+function nomal(){
+     var b = L.imageOverlay("../images/temp/final.png", bounds).addTo(map);
+}
+
+document.getElementById("btnb1").addEventListener("click", btnclk5);
+function btnclk5(){
+     var b = L.imageOverlay("../images/temp/exit1.png", bounds).addTo(map);
+}
+
+document.getElementById("btnb2").addEventListener("click", btnclk6);
+function btnclk6(){
+     var b = L.imageOverlay("../images/temp/exit2.png", bounds).addTo(map);
+}
+
+document.getElementById("btnb3").addEventListener("click", btnclk7);
+function btnclk7(){
+     var b = L.imageOverlay("../images/temp/exit3.png", bounds).addTo(map);
+}
+
+document.getElementById("btnb4").addEventListener("click", btnclk8);
+function btnclk8(){
+     var b = L.imageOverlay("../images/temp/exit4.png", bounds).addTo(map);
+}
+
+
+
+//-------------------------------화재난 곳의 온도와 연기의 정도에 따라 색의 농도로 표현하는 기능----------------------------------------------------------------
+
+setInterval(function(){
+    $.ajax({
+        type: "GET",
+        url: "../SensorServiceCon?num=1",
+        dataType: "json", 
+        success: function(response) {
+     	   L.geoJson(roomcounter, {style: myStyle1}).addTo(map);
+     	  L.geoJson(roomcounter2, {style: myStyle9}).addTo(map);   	  
+        }
+     })
+    }, 2000);
+
+//---------------------------------------------------------------------------------------------------------------------------------------------   
+
+
+
+//--------------------------------------------------불이 난 곳을 피해서 대피로를 자동으로 설정해주는 기능---------------------------------------------------
+setTimeout( function(){L.imageOverlay("../images/temp/exit2.png", bounds).addTo(map)}, 9000);
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+</script>	
+
+	
+    
+    	<!--푸터영역 -->
+	<footer id="intro_footer">
+		<div>
+			<h1 class="logo_bottom sprite">화생방 로고</h1>
+			<div class="copyright">
+				<p>
+					<br> 대표전화 <b>062)000-0000</b>
+				</p>
+			</div>
+		</div>
+	</footer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     </body>
     </html>
