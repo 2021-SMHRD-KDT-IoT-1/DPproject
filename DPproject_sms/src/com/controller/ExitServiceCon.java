@@ -25,7 +25,7 @@ public class ExitServiceCon extends HttpServlet {
 			System.out.println("대피로 번호 업뎃 실패");
 		}
 			
-		response.sendRedirect("sensor_test.jsp");
+		
 	}
 
 }
