@@ -18,6 +18,9 @@
 	reportDTO result = dao.showOne(reportnum);
 	
 	%>
+	
+	<h1>고장 신고</h1>
+	<br>
 
 	<div id = "board">
 		<form action="ModifyReportServiceCon.do" method="post">
