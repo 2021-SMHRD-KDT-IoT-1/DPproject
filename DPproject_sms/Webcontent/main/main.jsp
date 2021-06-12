@@ -18,6 +18,13 @@
 	<link rel="stylesheet" href="../assets/css/noscript.css" />
 </noscript>
 </head>
+
+<style>
+.article {
+border-radius : 20px;
+} 
+
+</style>
 <body class="is-preload">
 
 s<%

@@ -42,7 +42,7 @@
 					</form>
 				</div>
 				<div class="col-12" align="right">
-					<input type="submit" value="작성" />
+					<input type="submit" value="작성" class = "btn-grad"/>
 				</div>
 			</div>
 		</div>
