@@ -126,7 +126,7 @@
             },                          
             success : function(data){                          
               
-            	if (data==1)
+            	if (data==0)
             		
             		{
             		
