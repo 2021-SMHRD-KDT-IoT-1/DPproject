@@ -25,7 +25,7 @@
 		</div>
 		<%} %>
 		
-		<div align="center"><img src="../images/logo.png" width = 300px></div>
+		<div align="center"><img src="../images/logo.png" width = 200px></div>
 		<p class="s_title">PreparEscape
 		</p>
 
