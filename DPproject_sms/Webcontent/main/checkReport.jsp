@@ -29,36 +29,35 @@ resize : none;
 	<h2>고장 신고</h2>
 	
 	<br>
-	<div>
-		<table>
-		
-			<tr>
-				<td class = title> <%=result.getReport_title() %></td>
-				<td align=right><%=result.getReport_name() %> / <%=result.getReport_tel() %></td>
-			</tr>
-			<tr>
-
-			</tr>
-
-			<tr>
-				<td colspan = 2>
-				<img src="../img/<%=result.getReport_filename() %>" width = 800px>
-				</td>
-			</tr>
-
-			<tr>
-				<td colspan = 2>
-					<textarea readonly rows="6"><%=result.getReport_content() %> </textarea>
-				</td>
-			</tr>
-
-			<tr>
-				<td colspan = 2 align="right">
-				<a href="main.jsp?reportnum=<%=reportnum%>#modifyReport"><button >수정</button></a>
-				<a href="main.jsp#report"><button>작성</button></a>
-				</td>
-			</tr>
-		</table>
+	<div id = "board">
+	<form>
+			<div>
+			<div class="row">
+				<div class="col-6">
+					<input type="text" readonly name="modifyReportName" value="<%=result.getReport_name()%>"/>
+				</div>
+				<div class="col-6">
+					<input type="text" readonly name="modifyReportTel" value="<%=result.getReport_tel()%>" />
+				</div>
+				<div class="col-12">
+					<input type="text" readonly name="modifyReportTitle" value="<%=result.getReport_title() %>">
+				</div>
+				<div class="col-12">
+					<img src="../img/<%=result.getReport_filename() %>" width=800px;>
+					<form>
+					<textarea name="modifyReportContent" readonly rows="6" style = "resize:none;" onKeyUp="javascript:fnChkByte(this,'1000')">
+<%=result.getReport_content() %>
+					</textarea>
+					<span id="byteInfo">0</span> 1000bytes
+					</form>
+				</div>
+			</div>
+		</div>
+		</form>
+				<div class="col-12" align="right">
+				<a href="main.jsp?reportnum=<%=reportnum%>#modifyReport"><button id="button">수정</button></a>
+				<a href="main.jsp#report"><button id="button">작성</button></a>
+				</div>
 	</div>
 </body>
 </html>

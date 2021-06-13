@@ -1643,7 +1643,7 @@ background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 	input[type="submit"],
 	input[type="reset"],
 	button,
-	.button {
+	.button{
 		-moz-transition: background-color .25s ease-in-out;
 		-webkit-transition: background-color .25s ease-in-out;
 		-ms-transition: background-color .25s ease-in-out;

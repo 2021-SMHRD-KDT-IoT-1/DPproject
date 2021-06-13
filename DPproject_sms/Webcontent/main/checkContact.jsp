@@ -63,7 +63,9 @@ font-weight : 600;
 			</tr>
 			
 			<tr>
-				<td><textarea readonly rows="10" cols="40" style="resize:none;"><%= dto.getContent() %> </textarea></td>
+				<td><textarea readonly rows="10" cols="40" style="resize:none;">
+<%= dto.getContent() %>
+				</textarea></td>
 			</tr>
 				
 			<tr align = right>
