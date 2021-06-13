@@ -10,20 +10,19 @@
 <body>
 
 	<header>
-		<h1>화생방</h1>
+		<h1>회사소개</h1>
+		<h3>화생방</h3>
 		<p>화재로부터 생명을 구하는 방법</p>
+		<br>
+		<br>
+		<br>
+		
+		
+		<p>안녕하십니까. 화생방입니다.</p>
+		<p>저희 기업은 2021년 05월 24일 설립되어, 현재까지 운영하고 있습니다.</p>
 	</header>
 	
-	<table>
-		<tr>
-			<td><a href = "#">대표<img src="../images/p1.jpg" width = "120px" height = "100px"/></a></td>
-			<td><p>경국지색, 팔방미인, ACE, 우리팀 팀장님 화이팅</p></td>
-		</tr>
 	
-	
-	
-	
-	</table>
 	
 </body>
 </html>

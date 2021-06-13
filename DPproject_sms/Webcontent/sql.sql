@@ -6,7 +6,7 @@ DROP TABLE report;
 DROP TABLE contact;
 DROP TABLE sensor;
 
-select * from sensor;
+select * from product;
 
 DROP SEQUENCE report_num;
 DROP SEQUENCE check_num;
