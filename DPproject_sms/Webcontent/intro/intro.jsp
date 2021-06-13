@@ -12,8 +12,15 @@
 </head>
 <body class="is-preload">
 	<section id = "wrapper" class="intro_top">
-		<div class="slogan"><img src="../images/logo.png" width = 500px></div>
+		<div align="center"><img src="../images/logo.png" width = 200px></div>
 		<p class="s_title">PreparEscape</p>
+		
+		<div class="member">
+			<span></span><br>
+			<span></span>			
+		</div>
+		
+		
 		<ul class="banner">
 			<li><a href="#menu"> 
 				<span>로그인 / 회원가입</span>
@@ -56,7 +63,7 @@
 	</nav>
 	
 	<!-- ******회원가입******** -->
-	<nav id = "join">
+<!-- 	<nav id = "join">
 		<ul class="inner links">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinServiceCon.do" method="post">
@@ -69,7 +76,7 @@
 			</form>
 		</ul>
 	
-	</nav>
+	</nav> -->
 
 	<!--푸터영역 -->
 	<footer id="intro_footer">

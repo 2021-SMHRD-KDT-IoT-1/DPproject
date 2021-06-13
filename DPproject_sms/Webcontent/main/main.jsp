@@ -27,7 +27,7 @@ border-radius : 20px;
 </style>
 <body class="is-preload">
 
-s<%
+<%
 	memberDTO dto = (memberDTO)session.getAttribute("dto");
 
 	String reportnum = request.getParameter("reportnum");

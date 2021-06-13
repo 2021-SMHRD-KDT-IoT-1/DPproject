@@ -1938,7 +1938,6 @@ input[type="submit"],
 		opacity 0.375s ease-out;
 	transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s
 		ease-out;
-	padding-top: 3.25em;
 }
 
 #wrapper.is-transitioning {
@@ -1959,11 +1958,6 @@ input[type="submit"],
 	}
 }
 
-@media screen and (max-width: 736px) {
-	#wrapper {
-		padding-top: 2.75em;
-	}
-}
 
 /* Menu */
 #menu {
@@ -1990,7 +1984,7 @@ input[type="submit"],
 	-webkit-pointer-events: none;
 	-ms-pointer-events: none;
 	pointer-events: none;
-	/* background: rgba(36, 41, 67, 0.9);  메뉴 배경색*/
+	 background: rgba(0, 0, 0, 0.5); /* 메뉴 배경색*/
 	box-shadow: none;
 	height: 100%;
 	left: 0;
