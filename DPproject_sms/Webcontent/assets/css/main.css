@@ -1,5 +1,5 @@
 @import url("fontawesome-all.min.css");
-@import url("../assets/css/font.css");
+@import url("font.css");
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -1365,7 +1365,7 @@ background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 	body, input, textarea, select, table {
 		font-family: 'Y_Spotlight';
 		font-weight: 300;
-		color: #777777;
+		color: #7b7979;
 		font-size: 20pt;
 		line-height: 1.75em;
 	}
@@ -1404,7 +1404,7 @@ background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 
 	strong, b, h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
-		color: #363636;
+		color: #7b7979;
 	}
 
 	h1 {
@@ -1420,6 +1420,7 @@ background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 	h3, h4, h5, h6 {
 		font-size: 1.25em;
 		letter-spacing: -0.015em;
+		margin : 0 10px 0 0;
 	}
 
 	@media screen and (max-width: 736px) {
