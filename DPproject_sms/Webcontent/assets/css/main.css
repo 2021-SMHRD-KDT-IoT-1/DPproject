@@ -1480,9 +1480,8 @@ background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 
 	table {
 		width: 100%;
-		
-		color: #363636;
-		
+		border : 2px;
+		border-color : #f4f4f4;
 		display: block;
 		display: flex;
 		flex-wrap: wrap;
@@ -1498,12 +1497,14 @@ background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 
 		table td {
 			padding: 0.5em 1em 0.5em 1em;
-			
 			-webkit-appearance: none;
-			border: 0;
-			background: #f4f4f4;
+			border: 2px;
+			border-color : #f4f4f4;
 			padding: 0.75em;
 			width: 100%;
+			margin : 0 2px 0 2px;
+			font-size : 25px;
+			font-weight: 400;
 		}
 
 		table.default th {
