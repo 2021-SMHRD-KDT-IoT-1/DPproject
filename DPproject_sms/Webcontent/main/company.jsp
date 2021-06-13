@@ -17,7 +17,7 @@
 	<table>
 		<tr>
 			<td><a href = "#">대표<img src="../images/p1.jpg" width = "120px" height = "100px"/></a></td>
-			<td><p>경국지색, 팔방미인, ACE</p></td>
+			<td><p>경국지색, 팔방미인, ACE, 우리팀 팀장님 화이팅</p></td>
 		</tr>
 	
 	
