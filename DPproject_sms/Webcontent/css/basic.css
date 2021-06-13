@@ -1,86 +1,6 @@
-@charset "utf-8";
+@import url("../assets/css/font.css");
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700;900&display=swap');
-
-@font-face {
-    font-family: 'Noto Sans Korean';
-    font-style: normal;
-    font-weight: 100;
-    src: local('Noto Sans Thin'), local('NotoSans-Thin'),
-    url(../fonts/NotoSansKR-Thin-Hestia.eot),
-    url(../fonts/NotoSansKR-Thin-Hestia.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/NotoSansKR-Thin-Hestia.woff) format('woff'),
-    url(../fonts/NotoSansKR-Thin-Hestia.otf) format('opentype');
-}
-
-@font-face {
-    font-family: 'Noto Sans Korean';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Noto Sans Light'), local('NotoSans-Light'),
-    url(../fonts/NotoSansKR-Light-Hestia.eot),
-    url(../fonts/NotoSansKR-Light-Hestia.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/NotoSansKR-Light-Hestia.woff) format('woff'),
-    url(../fonts/NotoSansKR-Light-Hestia.otf) format('opentype');
-}
-
-@font-face {
-    font-family: 'Noto Sans Korean';
-    font-style: normal;
-    font-weight: 350;
-    src: local('Noto Sans DemiLight'), local('NotoSans-DemiLight'),
-    url(../fonts/NotoSansKR-DemiLight-Hestia.eot),
-    url(../fonts/NotoSansKR-DemiLight-Hestia.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/NotoSansKR-DemiLight-Hestia.woff) format('woff'),
-    url(../fonts/NotoSansKR-DemiLight-Hestia.otf) format('opentype');
-}
-
-@font-face {
-    font-family: 'Noto Sans Korean';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Noto Sans Regular'), local('NotoSans-Regular'),
-    url(../fonts/NotoSansKR-Regular-Hestia.eot),
-    url(../fonts/NotoSansKR-Regular-Hestia.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/NotoSansKR-Regular-Hestia.woff) format('woff'),
-    url(../fonts/NotoSansKR-Regular-Hestia.otf) format('opentype');
-}
-
-@font-face {
-    font-family: 'Noto Sans Korean';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Noto Sans Medium'), local('NotoSans-Medium'),
-    url(../fonts/NotoSansKR-Medium-Hestia.eot),
-    url(../fonts/NotoSansKR-Medium-Hestia.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/NotoSansKR-Medium-Hestia.woff) format('woff'),
-    url(../fonts/NotoSansKR-Medium-Hestia.otf) format('opentype');
-}
-
-@font-face {
-    font-family: 'Noto Sans Korean';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Noto Sans Bold'), local('NotoSans-Bold'),
-    url(../fonts/NotoSansKR-Bold-Hestia.eot),
-    url(../fonts/NotoSansKR-Bold-Hestia.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/NotoSansKR-Bold-Hestia.woff) format('woff'),
-    url(../fonts/NotoSansKR-Bold-Hestia.otf) format('opentype');
-}
-
-@font-face {
-    font-family: 'Noto Sans Korean';
-    font-style: normal;
-    font-weight: 900;
-    src: local('Noto Sans Black'), local('NotoSans-Black'),
-    url(../fonts/NotoSansKR-Black-Hestia.eot),
-    url(../fonts/NotoSansKR-Black-Hestia.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/NotoSansKR-Black-Hestia.woff) format('woff'),
-    url(../fonts/NotoSansKR-Black-Hestia.otf) format('opentype');
-}
-
-
-html,body{ position:relative; font-family:'Noto Sans Korean', sans-serif; font-size:1em; font-weight:300; -webkit-text-size-adjust: 100%; }
+html,body{ position:relative; font-family:'S-CoreDream-9Black'; font-size:1em; font-weight:300; -webkit-text-size-adjust: 100%; }
 
 /*reset*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; vertical-align:baseline; box-sizing: border-box;  }
@@ -94,38 +14,20 @@ a { text-decoration:none; color:#666 }
 em,i{ font-style:normal }
 
 fieldset { min-width: 0; padding: 0; margin: 0; border: 0; }
-input[type="text"],input[type="submit"],input[type="button"],textarea,select,select option{ font-family:'Noto Sans Korean', sans-serif;  box-sizing: border-box; }
+input[type="text"],input[type="submit"],input[type="button"],textarea,select,select option{ font-family:'S-CoreDream-9Black';  box-sizing: border-box; }
 input[type="search"] { box-sizing: border-box; }
 input[type="radio"], input[type="checkbox"] { line-height: normal; }
 input[type="file"] { display:inline-block; }
-input[type="range"] { display: block; width: 100%; }
 select[multiple], select[size] { height: auto; }
 input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus { outline: thin dotted; outline: 5px auto; outline-offset: -2px; }
 textarea { height: auto !important; box-sizing: border-box; }
 
 /*reset end*/
 
-/* form */
-.form-style { display: inline-block; width:100%; height: 40px; padding: 6px 12px; font-family: 'Noto Sans Korean', sans-serif; font-size: 14px; font-weight:300; vertical-align: middle; line-height: 1.42857143; color: #555; background-color: #fff; background-image: none; border: 1px solid #e5e5e5; box-sizing:border-box;   }
-.form-style:focus { border-color: #66afe9; outline: 0; }
-.form-style:disabled{ background:#fefefe; }
-.form-style.wauto{ width:auto}
-
-
-/*check_box*/
-input[type='checkbox'],input[type='radio']{ margin-right:15px; width:17px; height:17px; opacity:0; position:absolute;  cursor:pointer}
-input[type='checkbox'] + label {display:inline-block;  background:url(../images/sub/icon_checked.png) 0px 0px  no-repeat; margin:0 5px 0 0;  font-size:16px;  height:17px; line-height:1;  padding-left:25px; cursor:pointer; background-size:17px;   text-align:left; }
-input[type='radio'] + label {display:inline-block;  background:url(../images/sub/icon_radio.png) 0px 0px  no-repeat; margin:0 15px 0 0;  font-size:16px;  height:17px; line-height:1;  padding-left:25px; cursor:pointer; background-size:17px; text-align:left;  }
-input[type='checkbox']:checked + label{ background-position: 0px -17px}
-input[type='radio']:checked + label{ background-position: 0px -17px}
-@media screen and (min-width:769px){
-input[type='checkbox'] + label,input[type='radio'] + label {display:inline-block; }
-}
-
 .select_custom{ background:#fff url(../img/sub/arrow_select.png) right center no-repeat; padding:0 30px 0 10px; -webkit-appearance:none; -moz-appearance:none; }
 .select_custom::-ms-expand{ display:none }
 
-a[target="_blank"]:after{ margin-left: 10px;  font-family: "Font Awesome 5 Pro"; font-size:inherit;  font-weight:300; content:"\f2d2" !important }
+a[target="_blank"]:after{ margin-left: 10px;  font-family: "SEBANG_Gothic_Bold"; font-size:inherit;  font-weight:300; content:"\f2d2" !important }
 
 /*basic_layout*/
 

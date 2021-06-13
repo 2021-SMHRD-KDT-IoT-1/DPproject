@@ -11,27 +11,28 @@
 
 </head>
 <body class="is-preload">
-	<section class="intro_top">
-	
-		<div class="slogan sprite">로고나 슬로건</div>
+	<section id = "wrapper" class="intro_top">
+		<div align="center"><img src="../images/logo.png" width = 200px></div>
 		<p class="s_title">PreparEscape</p>
+		
+		<div class="member">
+			<p></p><br>			
+			<p></p>			
+		</div>
+		
+		
 		<ul class="banner">
-			<li><a href="#menu"> <span>뭐라고하징</span>
-					<p class="title">회원페이지</p>
-					<p class="s_title">실시간 화재 감시</p>
+			<li><a href="#menu"> 
+				<span>로그인 / 회원가입</span>
+				<p class="s_title">회원 서비스</p>
 			</a></li>
-<!-- 			
-			<li><a onclick="openWindow()"> <span>PreparEscape</span>
-					<p class="title">대#ㅣ</p>
-					<p class="s_title">홈페이지</p>
+			
+			<li onclick="openWindow()"><a> 
+					<span>PreparEscape</span>
+					<p class="s_title">화생방 홈페이지</p>
 					
 			</a></li>
- -->			
- 			
- 			<li onclick="openWindow()"><span>PreparEscape</span>
-				<p class="title">대#ㅣ</p>
-				<p class="s_title">홈페이지</p>
-			</li>
+			
 	<script>
 		var newWindowObj;
 		// 변수 strWindowFeatures를 통해 새롭게 여는 웹 브라우저 창의 옵션들을 일일이 설정할 수 있음.
@@ -46,21 +47,24 @@
 		
 		
 	<!--로그인 메뉴********  -->	
+	
 	<nav id="menu">
-		<ul class="links">
+	<div class="inner links">
+		<ul>
 			<li><h5>로그인</h5></li>
 			<form action="LoginServiceCon.do" method="post">
 				<li><input type="text" placeholder="ID" name="id"></li>
 				<li><input type="password" placeholder="PASSWORD" name="pw"></li>
 				<li><input type="submit" value="LOGIN" class="button fit"></li>
 			</form>
-			<li><a href = "#join"><botton>JOIN</botton></a></li>
+				<li><input type ="button" class="button fit" value="JOIN" onclick="#join"></li>
 		</ul>
+		</div>
 	</nav>
 	
 	<!-- ******회원가입******** -->
-	<nav id = "join">
-		<ul class="links">
+<!-- 	<nav id = "join">
+		<ul class="inner links">
 			<li><h5>회원가입</h5></li>
 			<form action="JoinServiceCon.do" method="post">
 				<li><input type="text" placeholder="ID를 입력하세요" name="id"></li>
@@ -71,10 +75,8 @@
 				<li><input type="submit" value="JoinUs" class="button fit"></li>
 			</form>
 		</ul>
-	</nav>
 	
-	
-
+	</nav> -->
 
 	<!--푸터영역 -->
 	<footer id="intro_footer">
@@ -88,7 +90,6 @@
 			</div>
 		</div>
 	</footer>
-	
 </section>
 	<!-- Scripts -->
 		<script src="../assets/js/jquery.min.js"></script>

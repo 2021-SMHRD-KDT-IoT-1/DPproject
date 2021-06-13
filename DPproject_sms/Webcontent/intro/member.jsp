@@ -7,8 +7,7 @@
 <meta charset="EUC-KR">
 <title>대#ㅣ</title>
 <link href="../css/basic.css" rel="stylesheet" type="text/css">
-<link href="../css/intro.css" rel="stylesheet" type="text/css">
-<link href="../css/menu.css" rel="stylesheet" type="text/css">
+<link href="../css/member.css" rel="stylesheet" type="text/css">
 
 <!-- 1. 로그인한 회원 주소, 아이디 출력 -->
 </head>
@@ -16,132 +15,72 @@
 	<%
 		memberDTO dto = (memberDTO)session.getAttribute("dto");
 	%>
-	<section class="intro_top">
-		<div class="slogan sprite">로고나 슬로건</div>
-		<p class="s_title">PreparEscape</p>
-
-		<!-- 여기에 주소 출력!~!~!~!~! -->
-		<div>
-			<%if(dto!=null){%>
-			<span>주소 : <%=dto.getAddress() %></span>
-			<%}else {%>
-			<a href="#">로그인이 필요합니다! </a>
-			<%} %>
+		
+		<section id = "wrapper" class="intro_top">
+		
+		<div class="logout">
+		<%if(dto!=null) {%>
+			<p> <%=dto.getId()%>님</p>
+			<a href="LogoutServiceCon.do">로그아웃</a>
 		</div>
+		<%} %>
+		
+		<div align="center"><img src="../images/logo.png" width = 200px></div>
+		<p class="s_title">PreparEscape
+		</p>
 
-		<!-- 여기에 아이디 출력!~!~!~!~! -->
-		<div>
+		<div class="member">			
 			<%if(dto!=null){%>
-			<span> <%=dto.getId()%> 님 환영합니다!!
-			</span>
-			<%}else {%>
-			<a href="#">로그인이 필요합니다!</a>
-			<%} %>
-
+			<p><%=dto.getAddress() %></p>
+			<%}%>
 		</div>
 
 		<ul class="banner">
-			<%if(dto.getId().equals("master")) { %>
+			<%if(dto.getId().equals("master")) { %> 
 			
-			<li><a href="memberSelect.jsp"> <span>뭐라고 할까요</span>
-					<p class="title">회원관리</p>
-					<p class="s_title">뭐라고 할까요</p>
+			<li><a href="memberSelect.jsp"> <span></span>
+					<p class="s_title">회원관리</p>
 			</a></li>
 
-			<li><a href="reportList.jsp"> <span>뭐라고 할까요</span>
-					<p class="title">고장신고목록</p>
-					<p class="s_title">뭐라고 할까요</p>
+			<li><a href="reportList.jsp"> <span></span>
+					<p class="s_title">고장신고 목록</p>
 			</a></li>
 
-			<li><a href="contactBoardMain.jsp"> <span>뭐라고 할까요</span>
-					<p class="title">구매/대여목록</p>
-					<p class="s_title">뭐라고 할까요</p>
+			<li><a href="contactBoardMain.jsp"> <span></span>
+					<p class="s_title">구매/대여문의 목록</p>
 			</a></li>
-			
-			<%}else {%>
-			<li><a href="#"> <span>뭐라고하징</span>
-					<p class="title"></p>
+			<%}else{%>
+			<li><a href="realrealTime.html"> <span>EscapE</span>
 					<p class="s_title">실시간 화재 감시</p>
 			</a></li>
-			<li><a href="ViewCheckList.jsp"> <span>PreparEscape</span>
-					<p class="title"></p>
+			<li><a href="ViewCheckList.jsp"> <span>PreparE</span>
 					<p class="s_title">점검현황</p>
 			</a></li>
-			<% }%>
+			<%} %>
 		</ul>
-	</section>
 
-	<!-- 2. 로그아웃 버튼(위치는 나중에 수정해도 되니까 아무렇게나 만들어도 괜찮아요!) -->
-	<!-- 로그아웃 버튼 만들고 로그아웃 기능 구현~!~!~!~!~!~!~ -->
-	<%if(dto!=null) {%>
-	<a href="LogoutServiceCon.do">로그아웃</a>
-	<!-- <a href="#">개인정보 수정</a>
-			<a href="#">회원탈퇴</a> -->
-	<%} %>
-
-	<!--푸터영역 -->
+<!--푸터영역 -->
 	<footer id="intro_footer">
-		<div class="container">
-			<h1 class="logo_bottom sprite">화생방 로고</h1>
+		<div>
+			<!-- <h1 class="logo_bottom sprite">화생방 로고</h1> -->
 			<div class="copyright">
-				<p>
-					<br> 대표전화 <b>062)000-0000</b>
+				<p> 
+				<span>화생방</span> 
+				<span>Call : 062)000-0000</span> 
 				</p>
 			</div>
 		</div>
 	</footer>
+	</section>
 
 	<!-- Scripts -->
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.scrolly.min.js"></script>
-	<script src="../assets/js/jquery.scrollex.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/introutil.js"></script>
-	<script src="../assets/js/intro.js"></script>
-	
-		<script type="text/javascript" language="javascript">
-   var popupObj;
-   function popupOpen(){
-      var popUrl = "firepopup.html";  
-      var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
-      popupObj = window.open(popUrl,"",popOption);
-   }
-
-   function closePopup(){
-      if(popupObj!=undefined){
-         popupObj.close();
-         popupObj=undefined;
-      }
-   }
-
-   
-   setInterval(function(){
-        $.ajax({          
-            type : "GET", //겟방식, 포스트방식
-            url : "../FirepopupServiceCon?num=1", //ajaxData 서블릿에다가 id라는 변수 그리고 그 값이 asdf 라는 것을 전송
-            dataType : "text",
-            error : function(){
-                alert('통신실패!!');
-            },                          
-            success : function(data){                          
-              
-            	if (data==0)
-            		
-            		{
-            		
-            		popupOpen();
-            		          		
-            		}        	
-                                         
-            }
-            	           
-        });
-    }, 2000);	
-   
-   </script>	
-	
-	
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/introutil.js"></script>
+	<script src="assets/js/intro.js"></script>
 
 </body>
 </html>
