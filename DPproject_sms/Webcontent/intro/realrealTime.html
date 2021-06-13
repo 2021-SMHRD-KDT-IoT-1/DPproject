@@ -1,107 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Floor Map Example - Leaflet</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-      <!-- Load Leaflet from CDN -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-crossorigin=""/>
-<script src="https://unpkg.com/lea\flet@1.5.1/dist/leaflet.js"
-integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-crossorigin=""></script>
+<title>실시간 화재 감시</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Personal style and script file links -->
- <!--     <link rel="stylesheet" href="css/style.css">
+<link href="../css/realtime.css" rel="stylesheet" type="text/css">
+
+<!-- Load Leaflet from CDN -->
+<link rel="stylesheet"
+	href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+	integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+	crossorigin="" />
+<script src="https://unpkg.com/lea\flet@1.5.1/dist/leaflet.js"
+	integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+	crossorigin=""></script>
+
+<!-- Personal style and script file links -->
+<!--     <link rel="stylesheet" href="css/style.css">
       <script src="js/script.js" type="text/javascript" defer></script>-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>          
-<script type="text/javascript" src="../assets/js/leaflet.ajax.min.js"></script>   
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<script type="text/javascript" src="../assets/js/leaflet.ajax.min.js"></script>
 
 
 <style>
-
-#header {
-	background-color : green;
-	width : 100%;
-	height : 100px;
+#header{
+	box-sizing: border-box;
+	height: 15vh;
+	padding : 15px 30px;	
 }
 
 #section {
-	background-color : red;
-	width : 15%;
-	height : 700px;
-	float : left;
+	box-sizing: border-box;
+	width: 18vw;
+	height: 80vh;
+	float: left;
+}
+
+#main{
+	box-sizing: border-box;
+	width: 80vw;
+	height: 80vh;
+	float: right;
+	padding : 20px 130px;
 }
 
 #map {
-background-color : blue;
-width : 85%;
-height : 650px;
-box-sizing : border-box;
-float : left;
-}
-
-#Aside_bottom {
-background-color : green;
-width : 85%;
-height : 25px;
-box-sizing : border-box;
-float : left;
+	box-sizing: border-box;
+	width : 1200px;
+	height : 65vh;
+	margin-top: 10px;
 }
 
 #escape {
-background-color : green;
-width : 85%;
-height : 25px;
-box-sizing : border-box;
-float : left;
+	height: 5vh;
+	box-sizing: border-box;
+	float: center;
 }
-
-#intro_footer {
-background-color : red;
-height : 130px;
-box-sizing : border-box;
-clear:both;
-}
-
-
 </style>
-
-
 </head>
 <body>
-		
-<div class="slogan sprite" id = "header">로고나 슬로건</div>
-
-		<div id = "section">
-		<p class="s_title">소제목</p>
-		<ul>
-			<li><a><span>건물1</span></a>
-					<ul>
-						<a href = "#"><li>1F</li></a>
-						<a href = "#"><li>2F</li></a>
-						<a href = "#"><li>3F</li></a>
-					</ul>
-			</li>
-			<li><a> <span>건물2</span></a>
-					<ul>
-						<li>1F</li>
-						<li>2F</li>
-						<li>3F</li>
-					</ul>
-			</li>
-		</ul>
-		
+		<div id="header" align="left">
+			<img src="../images/logo.png" width=200px>
 		</div>
-	
-	
+		
+		<div id="section">
+			<ul>
+				<li><a>스마트인재캠퍼스</a></li>
+					<ul>
+						<li><a>1F</a></li>
+						<li><a>2F</a></li>
+						<li><a>3F</a></li>
+					</ul>
+				<li><a>스마트인재개발원</a></li>
+					<ul>
+						<li><a>1F</a></li>
+						<li><a>2F</a></li>
+						<li><a>3F</a></li>
+					</ul>
+			</ul>
+		</div>
 
 
-<div id = "map">			
-<script>
+
+<div id="main">
+
+			<span id="escape">
+				<button id="normal">피난안내도</button>
+				<button id="btnb1">대피로1</button>
+				<button id="btnb2">대피로2</button>
+				<button id="btnb3">대피로3</button>
+				<button id="btnb4">대피로4</button>
+			</span>
+
+		<div id="map">
+			<script>
 //----------------------------------지도 기본 세팅 --------------------------------------------     
     var map = L.map('map', {crs: L.CRS.Simple});
     var bounds = [[0,0], [600,1000]]; // Set the image resolution as the boundary
@@ -366,27 +361,8 @@ clear:both;
     
     //-------------------------------------------------------------------------------------- 
     </script>
-	</div>   
-	
-	
-
-		
-				<div>
-			<div id="Aside_bottom" > <!-- style="width: 800px; height: 600px;" -->
-			<span></span>
-			<span></span>
-			<span></span>
-			<button id = "normal">기본</button>		
-			</div>
-		
-			<div id = "escape">
-				<button id = "btnb1">대피로1</button>
-				<button id = "btnb2">대피로2</button>
-				<button id = "btnb3">대피로3</button>
-				<button id = "btnb4">대피로4</button>
-			</div>	
 		</div>
-	
+
 <script>
 
 document.getElementById("normal").addEventListener("click", nomal);
@@ -437,39 +413,11 @@ setInterval(function(){
 //--------------------------------------------------불이 난 곳을 피해서 대피로를 자동으로 설정해주는 기능---------------------------------------------------
 setTimeout( function(){L.imageOverlay("../images/temp/exit2.png", bounds).addTo(map)}, 9000);
 
-//------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------\----------------------------------------------------------------------------------------------
 
+</script>
 
+</div>
 
-</script>	
-
-	
-    
-    	<!--푸터영역 -->
-	<footer id="intro_footer">
-		<div>
-			<h1 class="logo_bottom sprite">화생방 로고</h1>
-			<div class="copyright">
-				<p>
-					<br> 대표전화 <b>062)000-0000</b>
-				</p>
-			</div>
-		</div>
-	</footer>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </body>
-    </html>
+</body>
+</html>
