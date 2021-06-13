@@ -12,7 +12,7 @@
 </head>
 <body class="is-preload">
 	<section id = "wrapper" class="intro_top">
-		<div class="slogan sprite">로고나 슬로건</div>
+		<div class="slogan"><img src="../images/logo.png" width = 500px></div>
 		<p class="s_title">PreparEscape</p>
 		<ul class="banner">
 			<li><a href="#menu"> 
