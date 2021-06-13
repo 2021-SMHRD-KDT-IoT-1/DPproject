@@ -13,7 +13,7 @@ html.open,body.open{ overflow: hidden; }
 .intro_top > p{ font-family: 'SEBANG_Gothic_Bold'; font-weight:500; color:#fff;  text-align: center; line-height: 1.5}
 .intro_top > p.s_title{ font-size:18px; margin-bottom:30px;  }
 
-.banner{ width:90%; margin:0 auto; background:#fff; padding : 25px; color:#262626; border-radius: 20px; overflow:hidden }
+.banner{ width:90%; margin:0 auto; background:#fff; padding : 50px 25px; color:#262626; border-radius: 20px; overflow:hidden }
 .banner li{ font-family: 'SEBANG_Gothic_Bold'; border-bottom:#ccc solid 1px; text-align: center; padding:15px 0;  }
 .banner li span{ display: block; color:#b2b2b2; margin-bottom:10px; }
 .banner li p{ font-weight:bold; line-height: 1.3; }
@@ -38,12 +38,12 @@ html.open,body.open{ overflow: hidden; }
 @media all and (min-width:768px) {
   .intro_top{ padding-top:50px; padding-bottom:50px; }
   .intro_top{ padding:100px 0; }
-  .intro_top p.s_title{ font-size:20px; }
+  .intro_top p.s_title{ font-size:50px; }
   .intro_top p.title{ font-size:30px; }
   .slogan{ margin:0 auto 30px auto;}
 
   .banner{ display:flex; padding:0;  }
-  .banner li{ width:90%; padding:25px; border-bottom:0; border-right:#ccc solid 1px; }
+  .banner li{ width:90%; padding : 50px 25px; border-bottom:0; border-right:#ccc solid 1px; }
   .banner li:last-child{ border-right:0; }
 
   .copyright p{ font-size:16px;}
