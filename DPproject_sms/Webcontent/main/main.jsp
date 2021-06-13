@@ -39,8 +39,8 @@ s<%
 
 		<!-- 메뉴 버튼 -->
 		<nav id="nav">
-			<a href="#home" class="icon solid fa-home"><span>Home</span></a> <a
-				href="#company" class="icon solid fa-bold"><span>About</span></a> <a
+			<a href="#home" class="icon solid fa-home"><span>Home</span></a> 
+			<a href="#company" class="icon solid fa-bold"><span>About</span></a> <a
 				href="#product" class="icon solid fa-fire"><span>Product</span></a>
 			<a href="#report" class="icon solid fa-bullhorn"><span>Report</span></a>
 			<a href="#contact" class="icon solid fa-comments-dollar"><span>Contact</span></a>
