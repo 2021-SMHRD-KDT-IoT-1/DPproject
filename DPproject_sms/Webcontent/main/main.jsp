@@ -20,7 +20,7 @@
 </head>
 
 <style>
-.article {
+article {
 border-radius : 20px;
 } 
 
