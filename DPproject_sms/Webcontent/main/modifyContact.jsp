@@ -11,7 +11,7 @@
 <body>
 	<%
 	// get 방식으로 보낸 num받아오기
-	  String get_num = request.getParameter("num");
+	  String get_num = request.getParameter("contactnum");
 	  System.out.println(get_num);
 	// String -> int 형변환
 	  int num = Integer.parseInt(get_num);
@@ -21,10 +21,17 @@
 	contactDTO dto = dao.showOne(num);
 	
 	%>
+	
+	<h1>구매/대여</h1>
+	<br>
 
 	<div id = "board">
 		<form action="ModifyContactServiceCon.do" method="post">
 			<table id="list">
+				<tr>
+					<td>제목</td>
+					<td><input type="text" name="ModifyTitle" value="<%=dto.getTitle()%>"></td>
+				</tr>
 				<tr>
 					<td>작성자</td>
 					<td><input type="text" name="ModifyName" value="<%=dto.getName()%>"></td>
@@ -34,20 +41,16 @@
 					<td><input type="text" name="ModifyTel" value="<%=dto.getTel()%>"></td>
 				</tr>
 				<tr>
-					<td>제목</td>
-					<td><input type="text" name="ModifyTitle" value="<%=dto.getTitle()%>"></td>
-				</tr>
-				<tr>
 					<td colspan="2">내용</td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<img src="../img/<%=dto.getFilename()%>">
+						<img src="../img/<%=dto.getFilename()%>"  width = 1031px, height = 700px>
 						<textarea name="ModifyContent" rows="6" style = "resize:none;" ><%=dto.getContent()%></textarea>
 					</td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="수정"></td>
+					<td colspan = "2" align = "right"><input type="submit" value="수정"></td>
 				</tr>
 			</table>
 			<input type = "hidden" name = "ModifyNum" value="<%=dto.getNum()%>">

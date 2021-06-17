@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
 @import url("fontawesome-all.min.css");
+@import url("font.css");
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -1341,9 +1341,7 @@ background-image : linear-gradient(315deg, #000000 0%, #7f8c8d 74%); */
 /* background-color: #d7d7d7;
 background-image: linear-gradient(147deg, #d7d7d7 0%, #353535 74%);
  */
-background: #bdc3c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 
 
 
@@ -1364,17 +1362,17 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 			transition: none !important;
 		}
 
-	body, input, textarea, select {
-		font-family: 'Source Sans Pro', sans-serif;
+	body, input, textarea, select, table {
+		font-family: 'Y_Spotlight';
 		font-weight: 300;
-		color: #777777;
+		color: #7b7979;
 		font-size: 20pt;
 		line-height: 1.75em;
 	}
 
 		@media screen and (max-width: 1680px) {
 
-			body, input, textarea, select {
+			body, input, textarea, select, table {
 				font-size: 15pt;
 			}
 
@@ -1382,7 +1380,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 		@media screen and (max-width: 1280px) {
 
-			body, input, textarea, select {
+			body, input, textarea, select, table {
 				font-size: 14pt;
 			}
 
@@ -1390,7 +1388,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 		@media screen and (max-width: 736px) {
 
-			body, input, textarea, select {
+			body, input, textarea, select, table {
 				font-size: 12pt;
 			}
 
@@ -1398,7 +1396,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 		@media screen and (max-width: 360px) {
 
-			body, input, textarea, select {
+			body, input, textarea, select, table {
 				font-size: 11pt;
 			}
 
@@ -1406,7 +1404,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 	strong, b, h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
-		color: #363636;
+		color: #7b7979;
 	}
 
 	h1 {
@@ -1422,6 +1420,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 	h3, h4, h5, h6 {
 		font-size: 1.25em;
 		letter-spacing: -0.015em;
+		margin : 0 10px 0 0;
 	}
 
 	@media screen and (max-width: 736px) {
@@ -1481,14 +1480,31 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 
 	table {
 		width: 100%;
+		border : 2px;
+		border-color : #f4f4f4;
+		display: block;
+		display: flex;
+		flex-wrap: wrap;
+		box-sizing: border-box;
+		align-items: stretch;
+		
+
 	}
 
 		table.default tbody tr {
 			border-bottom: solid 1px #f4f4f4;
 		}
 
-		table.default td {
+		table td {
 			padding: 0.5em 1em 0.5em 1em;
+			-webkit-appearance: none;
+			border: 2px;
+			border-color : #f4f4f4;
+			padding: 0.75em;
+			width: 100%;
+			margin : 0 2px 0 2px;
+			font-size : 25px;
+			font-weight: 400;
 		}
 
 		table.default th {
@@ -1627,7 +1643,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 	input[type="submit"],
 	input[type="reset"],
 	button,
-	.button {
+	.button{
 		-moz-transition: background-color .25s ease-in-out;
 		-webkit-transition: background-color .25s ease-in-out;
 		-ms-transition: background-color .25s ease-in-out;
@@ -1636,7 +1652,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 		display: inline-block;
 		background-color: #222222;
 		color: #ffffff;
-		border: 0;
+		border-radius: 20px;
 		cursor: pointer;
 		outline: 0;
 		padding: 0.7em 1.5em 0.7em 1.5em;
@@ -1818,7 +1834,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 		#nav a {
 			position: relative;
 			display: inline-block;
-			color: #ffffff;
+			color: #000;
 			width: 1em;
 			height: 1em;
 			line-height: 0.9em;
@@ -2229,3 +2245,8 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 			}
 
 		}
+		
+
+
+         
+         
